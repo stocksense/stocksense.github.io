@@ -301,7 +301,7 @@
             <div class="col-sm-8">
                 <h4><strong>Twitter sentiments analysis web application</strong></h4>
                 <p>
-                    Stockeye is a web application that looks into well known stocks, as it classifies the stock’s data using twitter sentiments, that is shared to users. Users interacting with these products, include stockholders, and investors, that are looking for an efficient way to buy, and trade stocks, within a controlled environment. The application presents a watch list of stocks to users, which they are then able to track its sentiments. This is useful for clients,by saving time, as investors aren’t required to go and identify data on their own. 
+                    Stockeye is a web application that looks into well known stocks, as it classifies the stock’s data using twitter sentiments, that is shared to users. Users interacting with these products, include stockholders, and investors, that are looking for an efficient way to buy, and trade stocks, within a controlled environment. The application presents a watch list of stocks to users, which they are then able to track its sentiments. This is useful for clients,by saving time, as investors aren’t required to go and identify data on their own.
                 </p>
             </div>
         </div>
@@ -367,7 +367,7 @@
             <div class="col-sm-4">
                 <p class="text-center"><strong>Jeff</strong></p>
                 <a href="#demo4" data-toggle="collapse">
-                    <img src="Images/mynameehhjeff.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
                 </a>
                 <div id="demo4" class="collapse">
                     <p>Person Description Title</p>
@@ -471,7 +471,7 @@
         <br>
         <p>&nbsp;</p>
     </div>
-   
+
     <footer class="container-fluid text-center">
         <a href="#myPage" title="To Top">
             <span class="glyphicon glyphicon-chevron-up"></span>
@@ -480,40 +480,40 @@
     </footer>
 
     <script>
-            $(document).ready(function(){
-                              // Add smooth scrolling to all links in navbar + footer link
-                              $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
-                                                                          // Make sure this.hash has a value before overriding default behavior
-                                                                          if (this.hash !== "") {
-                                                                          // Prevent default anchor click behavior
-                                                                          event.preventDefault();
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
 
-                                                                          // Store hash
-                                                                          var hash = this.hash;
+                    // Store hash
+                    var hash = this.hash;
 
-                                                                          // Using jQuery's animate() method to add smooth page scroll
-                                                                          // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
-                                                                          $('html, body').animate({
-                                                                                                  scrollTop: $(hash).offset().top
-                                                                                                  }, 900, function(){
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
 
-                                                                                                  // Add hash (#) to URL when done scrolling (default click behavior)
-                                                                                                  window.location.hash = hash;
-                                                                                                  });
-                                                                          } // End if
-                                                                          });
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
 
-                              $(window).scroll(function() {
-                                               $(".slideanim").each(function(){
-                                                                    var pos = $(this).offset().top;
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
 
-                                                                    var winTop = $(window).scrollTop();
-                                                                    if (pos < winTop + 600) {
-                                                                    $(this).addClass("slide");
-                                                                    }
-                                                                    });
-                                               });
-                              })
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
     </script>
 
 </body>
