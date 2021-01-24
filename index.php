@@ -1,3 +1,1 @@
-<?php 
-    echo "<script>location.href='index.html';</script>";
-?>
+<?php include_once("index.html"); ?>
