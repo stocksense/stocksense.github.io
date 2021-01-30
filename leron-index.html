@@ -1,0 +1,588 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>StockEye</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            font: 400 15px Lato, sans-serif;
+            line-height: 1.8;
+            color: #818181;
+        }
+
+        h2 {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #303030;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            color: #303030;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+
+        .jumbotron {
+            background-color: #0d0051;
+            color: #fff;
+            padding: 100px 25px;
+            font-family: Montserrat, sans-serif;
+        }
+
+        .container-fluid {
+            padding: 60px 50px;
+        }
+
+        .bg-grey {
+            background-color: #f6f6f6;
+        }
+
+        .logo-small {
+            color: #f4511e;
+            font-size: 50px;
+        }
+
+        .logo {
+            color: #f4511e;
+            font-size: 200px;
+        }
+
+        .thumbnail {
+            padding: 0 0 15px 0;
+            border: none;
+            border-radius: 0;
+        }
+
+            .thumbnail img {
+                width: 100%;
+                height: 100%;
+                margin-bottom: 10px;
+            }
+
+        .carousel-control.right, .carousel-control.left {
+            background-image: none;
+            color: #f4511e;
+        }
+
+        .carousel-indicators li {
+            border-color: #f4511e;
+        }
+
+            .carousel-indicators li.active {
+                background-color: #f4511e;
+            }
+
+        .item h4 {
+            font-size: 19px;
+            line-height: 1.375em;
+            font-weight: 400;
+            font-style: italic;
+            margin: 70px 0;
+        }
+
+        .item span {
+            font-style: normal;
+        }
+
+        .panel {
+            border: 1px solid #f4511e;
+            border-radius: 0 !important;
+            transition: box-shadow 0.5s;
+        }
+
+            .panel:hover {
+                box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+            }
+
+        .panel-footer .btn:hover {
+            border: 1px solid #f4511e;
+            background-color: #fff !important;
+            color: #f4511e;
+        }
+
+        .panel-heading {
+            color: #fff !important;
+            background-color: #f4511e !important;
+            padding: 25px;
+            border-bottom: 1px solid transparent;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .panel-footer {
+            background-color: white !important;
+        }
+
+            .panel-footer h3 {
+                font-size: 32px;
+            }
+
+            .panel-footer h4 {
+                color: #aaa;
+                font-size: 14px;
+            }
+
+            .panel-footer .btn {
+                margin: 15px 0;
+                background-color: #f4511e;
+                color: #fff;
+            }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #353535;
+            z-index: 9999;
+            border: 0;
+            font-size: 12px !important;
+            line-height: 1.42857143 !important;
+            letter-spacing: 4px;
+            border-radius: 0;
+            font-family: Montserrat, sans-serif;
+        }
+
+            .navbar li a, .navbar .navbar-brand {
+                color: #fff !important;
+            }
+
+        .navbar-nav li a:hover, .navbar-nav li.active a {
+            color: #353535 !important;
+            background-color: #fff !important;
+        }
+
+        .navbar-default .navbar-toggle {
+            border-color: transparent;
+            color: #fff !important;
+        }
+
+        footer .glyphicon {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #f4511e;
+        }
+
+        .slideanim {
+            visibility: hidden;
+        }
+
+        .slide {
+            animation-name: slide;
+            -webkit-animation-name: slide;
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+            visibility: visible;
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateY(70%);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0%);
+            }
+        }
+
+        @-webkit-keyframes slide {
+            0% {
+                opacity: 0;
+                -webkit-transform: translateY(70%);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: translateY(0%);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .col-sm-4 {
+                text-align: center;
+                margin: 25px 0;
+            }
+
+            .btn-lg {
+                width: 100%;
+                margin-bottom: 35px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .logo {
+                font-size: 150px;
+            }
+        }
+
+        .logo {
+            margin-top: 5px;
+        }
+
+        .youtubediv {
+            width: 300px;
+            text-align: center;
+            margin-top: 90px;
+            float: left;
+        }
+
+        .downloadDiv {
+            float: left
+        }
+    </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a href="#myPage">
+                    <!--<img class="logo" src="Images/ProfilePicture.jpg" width="40" alt="Logo">-->
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-top">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#info">Functions</a></li>
+                    <li><a href="#text">Description</a></li>
+                    <li><a href="#benefits">Benefits</a></li>
+                    <li><a href="#constraints">Constraints</a></li>
+                    <li><a href="#assumptions">Assumptions</a></li>
+                    <li><a href="#interface">Interface</a></li>
+                    <li><a href="#team">Team</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+        <h1>StockEye</h1>
+        <p>A web-based Twitter sentiment aggregator for investors</p>
+    </div>
+
+    <!-- Container (About Section) -->
+    <div id="about" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>About StockEye / Product Description</h2>
+                <strong>
+
+                    StockEye provides a streamlined web-based platform for investors and market enthusiasts to view the prospective performance of popular stocks based on Twitter sentiment analysis.
+
+                </strong>
+            </div>
+            <div class="col-sm-4">
+                <p><img src="Images/laptop.png" class="img-responsive center-block" width="1000" alt="Home"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="info" class="container-fluid bg-grey">
+        <div class="row">
+            <!--<h2>Info</h2>-->
+
+            <div class="col-sm-4">
+                <img src="Images/graph.jpg" class="img-responsive center-block" alt="Graph" width="500">
+            </div>
+            <div class="col-sm-8">
+                <h2>Product Functions</h2>
+                <strong>
+                    Stockeye is a web application that aggregates and analyses tweets that are related to the market from the popular social networking service Twitter, offering information regarding the public sentiments of stocks to its users. StockEye allows its users to create an account and presents them with a customizable watch list of stocks, enabling them to conveniently track the sentiments of multiple stocks of their choosing. StockEye also provides users the ability to view tweets that are relevant to trending stocks. StockEye is thus intended to be another tool in an investor’s repertoire for market research.
+                </strong>
+            </div>
+        </div>
+    </div>
+
+    <div id="text" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>Description of Users</h2>
+                <strong>
+                    The user base StockEye intends to serve are people who seek a convenient and efficient way to collect information concerning the stocks they are curious about, or plan to invest in. Users are thus largely expected to range from beginners to financial experts.
+                </strong>
+
+            </div>
+            <div class="col-sm-4">
+                <p><img src="Images/analysis.jpg" class="img-responsive center-block" width="350" alt="Analysis"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="benefits" class="container-fluid bg-grey">
+        <div class="row">
+            <!--<h2>Info</h2>-->
+
+            <div class="col-sm-4">
+                <img src="Images/uStock.jpg" class="img-responsive center-block" alt="Graph" width="500">
+            </div>
+            <div class="col-sm-8">
+                <h2>Benefits to the Audience</h2>
+                <strong>
+                    StockEye seeks to serve its audience in multiple ways. For one, using Twitter as a source of data is valuable due to the impact that public opinion has on the market. This enables users to make more informed investment decisions. Additionally, this platform will save users valuable time, as they will no longer be required to research and analyse Twitter sentiments themselves. As a web application StockEye is also highly accessible.
+                </strong>
+            </div>
+        </div>
+    </div>
+
+    <div id="constraints" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>Constraints</h2>
+                <strong>
+                    StockEye must be fully documented and implemented by April 12th, and so time is a chief constraint. Machine learning is a key component of sentiment analysis, and the development team, as a whole, is largely unacquainted with its mechanism and details. Thus, it is expected that more time than ideal will be allocated to gathering and learning the prerequisites of machine learning demanded by the application. This is the primary obstruction in our objective to have a fully-functional implementation by the deadline. Furthermore, due to the COVID-19 pandemic, the team will be unable to coordinate in-person meetings, which could result in a reduction in productivity and clarity of communication. The project will have no expenses, due to the usage of free services during production of the application (django, python, etc). As such, the budget for this project is 0 dollars.
+                </strong>
+
+            </div>
+            <div class="col-sm-4">
+                <p><img src="Images/viewer.jpg" class="img-responsive center-block" width="250" alt="Analysis"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="assumptions" class="container-fluid bg-grey">
+        <div class="row">
+            <!--<h2>Info</h2>-->
+
+            <div class="col-sm-4">
+                <img src="Images/interfacePic.jpeg" class="img-responsive center-block" alt="Graph" width="500">
+            </div>
+            <div class="col-sm-8">
+                <h2>Assumptions and Dependencies</h2>
+                <strong>
+                    Users will be required to have access to the internet in order to access StockEye. Due to StockEye being entirely web-based, the user operating system is irrelevant.
+                </strong>
+            </div>
+        </div>
+    </div>
+
+    <div id="interface" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>User Interface</h2>
+                <strong>
+                    StockEye’s user interface consists of a home page and a personalized user page viewable by each respective user in the event that they have created an account and signed-in.
+
+                    The home page displays the sentiments of popular stocks, and if the user desires, the tweets relevant to these stocks, which can be filtered through parameters, such as date posted and traction (e.g. number of retweets, number of followers of the person posting the tweet). The home page will also contain information about StockEye, its functionality, and a login box.
+
+                    Each user’s personal page will consist of a watchlist of stocks of their choosing with the ability to add and remove stocks from this list. This page will also display the sentiment towards each stock and tweets relevant to these stocks (filtered as mentioned in the paragraph above).
+                </strong>
+
+            </div>
+            <div class="col-sm-4">
+                <p><img src="Images/stocker.jpg" class="img-responsive center-block" width="350" alt="Analysis"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container (Services Section) -->
+    <div id="team" class="container-fluid text-center">
+        <h2>Meet The Team</h2>
+        <p>&nbsp;</p>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Anshul Khatri</strong></p>
+                <a href="#demo" data-toggle="collapse">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                </a>
+                <div id="demo" class="collapse">
+                    <p>Email: khat3680@mylaurier.ca</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Brayden Mckay</strong></p>
+                <a href="#demo2" data-toggle="collapse">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                </a>
+                <div id="demo2" class="collapse">
+                    <p>Email: mcka7400@mylaurier.ca</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Campbell Leckie</strong></p>
+                <a href="#demo3" data-toggle="collapse">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                </a>
+                <div id="demo3" class="collapse">
+                    <p>Email: leck6240@mylaurier.ca</p>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Jeff Kolnick</strong></p>
+                <a href="#demo4" data-toggle="collapse">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                </a>
+                <div id="demo4" class="collapse">
+                    <p>Email: koln3930@mylaurier.ca</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Leron Bergelson</strong></p>
+                <a href="#demo5" data-toggle="collapse">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                </a>
+                <div id="demo5" class="collapse">
+                    <p>Email: berg5310@mylaurier.ca</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Nick Mills</strong></p>
+                <a href="#demo6" data-toggle="collapse">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                </a>
+                <div id="demo6" class="collapse">
+                    <p>Email: mill6100@mylaurier.ca</p>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Pericles Tsikrikis</strong></p>
+                <a href="#demo7" data-toggle="collapse">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                </a>
+                <div id="demo7" class="collapse">
+                    <p>Email: tsik9350@mylaurier.ca</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Roy Ceyleon</strong></p>
+                <a href="#demo8" data-toggle="collapse">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                </a>
+                <div id="demo8" class="collapse">
+                    <p>Email: ceyl0550@mylaurier.ca</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Ruth Schmidt</strong></p>
+                <a href="#demo9" data-toggle="collapse">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                </a>
+                <div id="demo9" class="collapse">
+                    <p>Email: schm4780@mylaurier.ca</p>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Tyler Price</strong></p>
+                <a href="#demo10" data-toggle="collapse">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                </a>
+                <div id="demo10" class="collapse">
+                    <p>Email: pric5180@mylaurier.ca</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Yasmine Ali</strong></p>
+                <a href="#demo11" data-toggle="collapse">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                </a>
+                <div id="demo11" class="collapse">
+                    <p>Email: alix7910@mylaurier.ca</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Mohsin Malik</strong></p>
+                <a href="#demo12" data-toggle="collapse">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                </a>
+                <div id="demo12" class="collapse">
+                    <p>Email: mali7370@mylaurier.ca</p>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row">
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Rafay Ahmed</strong></p>
+                <a href="#demo13" data-toggle="collapse">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                </a>
+                <div id="demo13" class="collapse">
+                    <p>Email: ahme0880@mylaurier.ca</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <p class="text-center"><strong>Michael Okenye</strong></p>
+                <a href="#demo14" data-toggle="collapse">
+                    <img src="Images/ProfilePicture.jpg" class="img-circle person" alt="Person" width="150" height="150">
+                </a>
+                <div id="demo14" class="collapse">
+                    <p>Email: oken8340@mylaurier.ca</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+        <a href="#myPage" title="To Top">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </a>
+        <p>Go to top</p>
+    </footer>
+
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function () {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+            $(window).scroll(function () {
+                $(".slideanim").each(function () {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+    </script>
+
+</body>
+</html>
