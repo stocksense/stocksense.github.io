@@ -45,7 +45,7 @@ h3 {
 	font-size: 120%;
 	color: #444;
 	border-bottom: 1px dotted #ddd;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 }
 
 h3:first-letter {
