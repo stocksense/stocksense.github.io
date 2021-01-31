@@ -604,21 +604,6 @@ label:hover {
 	color: #000;
 }
 
-.emblem-server {
-	margin: 0 0 2px 0;
-	padding: 0 0 2px 0;
-	font-size: 120%;
-	border-bottom: 1px solid #ddd;
-}
-
-.emblem-server label {
-	display: block;
-}
-
-.emblem-server label:hover {
-	cursor: pointer;
-}
-
 .block {
 	display: block;
 	width: 80%;
@@ -646,20 +631,6 @@ label:hover {
 textarea {
 	width: 320px;
 	height: 120px;
-}
-
-.checkout-text {
-	font-size: 120%;
-	font-weight: bold;
-}
-
-.checkout-text a {
-	border-bottom: 1px dotted #ccc;
-}
-
-.checkout-text a:hover {
-	color: #000;
-	border-bottom: 1px solid #aaa;
 }
 
 .important {
