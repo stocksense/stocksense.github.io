@@ -41,7 +41,7 @@ h2 {
 
 h3 {
 	/*font-style: italic;*/
-	font-weight: normal;
+	font-weight: bold;
 	font-size: 120%;
 	color: #444;
 	border-bottom: 1px dotted #ddd;
@@ -49,7 +49,16 @@ h3 {
 }
 
 h3:first-letter {
+	/*font-weight:normal;*/
+}
+
+h4 {
+	/*font-style: italic;*/
 	font-weight: bold;
+	font-size: 100%;
+	color: #444;
+	border-bottom: 1px dashed #ddd;
+	/*text-transform: uppercase;*/
 }
 
 p {
