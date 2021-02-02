@@ -104,15 +104,17 @@ label:hover {
 
 .page-info {
 	/*font-style: italic;*/
+	display: block;
 	font-weight: normal;
 	font-size: 80%;
 	color: #444;
 	margin-bottom: 6px;
-	padding: 5px;
+	padding: 0px;
 	color: #666;
 	background-color: #fff;
-	border: 1px solid #ccc;
+
 	text-align: left;
+	
 }
 
 .values {
