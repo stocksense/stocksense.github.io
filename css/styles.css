@@ -44,7 +44,7 @@ h3 {
 	font-weight: bold;
 	font-size: 120%;
 	color: #444;
-	border-bottom: 1px dotted #ddd;
+	border-bottom: 1px solid #ddd;
 	/*text-transform: uppercase;*/
 }
 
@@ -56,6 +56,15 @@ h4 {
 	/*font-style: italic;*/
 	font-weight: bold;
 	font-size: 100%;
+	color: #444;
+	border-bottom: 1px dotted #ddd;
+	/*text-transform: uppercase;*/
+}
+
+h5 {
+	/*font-style: italic;*/
+	font-weight: bold;
+	font-size: 90%;
 	color: #444;
 	border-bottom: 1px dashed #ddd;
 	/*text-transform: uppercase;*/
@@ -388,7 +397,7 @@ label:hover {
 }
 
 .vertical-table th, .vertical-table td {
-	font-size: 9pt;
+	/*font-size: 9pt;*/
 	border: 1px solid #ddd;
 }
 
