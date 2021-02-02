@@ -102,6 +102,24 @@ label:hover {
 	background-color: #333;
 }
 
+.page-info {
+	/*font-style: italic;*/
+	font-weight: normal;
+	font-size: 80%;
+	color: #444;
+	margin-bottom: 6px;
+	padding: 5px;
+	color: #666;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	text-align: left;
+}
+
+.values {
+	font-style: normal;
+	color: #bbb;
+}
+
 .notice {
 	display: block;
 	padding: 10px;
