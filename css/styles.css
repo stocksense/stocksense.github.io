@@ -377,7 +377,6 @@ label:hover {
 }
 
 .horizontal-table th, .horizontal-table td {
-	font-size: 9pt;
 	border: 1px solid #ddd;
 }
 
@@ -404,6 +403,26 @@ label:hover {
 .vertical-table label {
 	display: block;
 	padding: 5px;
+}
+
+.team-table {
+	border-spacing: 0;
+	border-collapse: collapse;	
+}
+
+.team-table th {
+	padding: 5px 10px;
+	background-color: #eee;
+}
+
+.team-table td {
+	padding: 5px 5px;
+	background-color: #fff;
+}
+
+.team-table th, .team-table td {
+	/*font-size: 9pt;*/
+	border: 1px solid #ddd;
 }
 
 .current-sub-menu {

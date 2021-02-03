@@ -13,11 +13,14 @@
         <h2 style="text-align:left;">Software Project Management Plan</h2>
         <div>
             <p class="page-info">
+                <span style="font-weight: bold;">Version:</span>
+                <span class="values">1.0</span>
+                <br>
                 <span style="font-weight: bold;">Release Date:</span>
-                <span class="values">-</span>
+                <span class="values">February 5, 2021</span>
                 <br>
                 <span style="font-weight: bold;">Last Updated:</span>
-                <span class="values">-</span>
+                <span class="values">February 4, 2021</span>
                 <br>
                 <span style="font-weight: bold;">Authors:</span>
                 <span class="values">Campbell Leckie, Roy Ceyleon, Tyler Price, Jeff Kolnick</span>
@@ -26,6 +29,28 @@
                 <span class="values">Yasmine Ali, Ruth Schmidt, Anshul Kahtri, Brayden Mckay, Syed Ahmed</span>
             </p>
         </div>
+
+        <p>The StockEye Software Project Management Plan was approved on February 4, 2021 by the CP317 StockEye group. This group consisted of the following members.</p>
+        <table class="team-table" style="font-size:80%; margin-left:auto;margin-right:auto; ">
+            <tr>
+                        <td>Ruth Schmidt</td>
+                        <td>Campbell Leckie</td>
+                        <td>Yasmine Ali</td>
+                        <td>Jeff Kolnick</td>
+                        <td>Nicholas Mills</td>
+                        <td>Syed Ahmed</td>
+                        <td>Perikles Tsikrikis</td>
+            </tr>
+            <tr>
+                        <td>Roy Ceyleon</td>
+                        <td>Leron Bergelson</td>
+                        <td>Anshul Khatri</td>
+                        <td>Mohsin Malik</td>
+                        <td>Michael Okenye</td>
+                        <td>Brayden Mckay</td>
+                        <td>Tyler Price</td>
+            </tr>
+        </table>
         <h3>Table of Contents</h3>
         <ul>
             <li><a href="#1.0.0">Overview</a>
@@ -52,20 +77,21 @@
             <ul>
                 <li><a href="#6.1.0">Process Model</a>
                 <li><a href="#6.2.0">Methods, Tools, and Techniques</a>
+                <li><a href="#6.3.0">Infrastructure Plan</a>
             </ul>
             <li><a href="#7.0.0">Supporting Process</a></li>
             <ul>
                 <li><a href="#7.1.0">Quality Assurance</a>
                 <li><a href="#7.2.0">Documentation</a>
             </ul>
-            <li><a href="#Update-History">Update History</a></li>
+            <li><a href="#Change-History">Change History</a></li>
         </ul>
 
         <h3><span id="1.0.0">(1.0.0) Overview</span></h3>
 	    <p>This overview provides background information and a brief description of the project, the client deliverables, the project milestones, and expected document changes.</p>
         <div style="padding: 0px 10px;">
             <h4><span id="1.1.0">(1.1.0) Project Summary</span></h4>
-            <p>StockEye is a web application that aggregates and analyses tweets that are related to the stock market from the popular social networking service Twitter, and offers information regarding the public sentiments of stocks to its users. StockEye seeks to serve its audience in multiple ways. For one, using Twitter as a source of data is valuable due to the impact that public opinion has on the market. This enables users to make more informed investment decisions. Additionally, this platform will save users valuable time, as they will no longer be required to research and analyse the Twitter sentiments themselves.</p>
+            <p>StockEye is a web application that aggregates and analyses tweets related to the stock market from the popular social media platform Twitter, and offers information regarding the public sentiments of stocks to its users. StockEye seeks to serve its audience in multiple ways. For one, Twitter is a valuable source of data due to the impact that public opinion has on the market, enabling users to make more informed investment decisions. Additionally, this platform will save users time, as they will no longer be required to research and analyse the Twitter sentiments themselves.</p>
             <div style="padding: 0px 10px;">
             <h5><span id="1.1.1">(1.1.1) Project Deliverables</span></h5>
                 <table class="vertical-table" style="font-size:90%; margin-left:auto;margin-right:auto;">
@@ -115,9 +141,10 @@
                     </ul>
                     The constraints of this project are:
                     <ul>
-                        <li>Time</li>
+                        <li>Time.</li>
                         <li>Inexperience and unfamiliarity with the prerequisite technologies demanded by the objectives of the application.</li>
                         <li>Limited communication capability due to COVID-19 pandemic restrictions.</li>
+                        <li>Zero budget, mandating the use of strictly free tools and infrastructure.</li>
                     </ul>
                 </span>
             </div>
@@ -130,6 +157,7 @@
                 <li><span style="font-weight:bold;">4.1 Project Responsibilities</span> - The roles of individual team members may change as the project progresses.</li>
                 <li><span style="font-weight:bold;">6.2 Methods, Tools, and Techniques</span> - Method, tools and techniques required may be revised as the project progresses.</li>
             </ul>
+            <span>All modifications to the SPMP are to be recorded under the “Change History” heading. Each entry must include a brief description detailing the revision, a timestamp, and the group member who authored it.</span>
         </div>
         
         <h3><span id="2.0.0">(2.0.0) Definitions</span></h3>
@@ -141,6 +169,8 @@
                 <li><span style="font-weight:bold;">Tester</span> - A member of the Quality Assurance team for a specific deliverable.</li>
                 <li><span style="font-weight:bold;">QA</span> - Quality Assurance</li>
                 <li><span style="font-weight:bold;">Chief</span> - A member delegated the task of ensuring that a deliverable is completed on time and all contributing members are satisfying preliminary deadlines.</li>
+                <li><span style="font-weight:bold;">Communications Correspondent</span> - A project member delegated the task of communicating concerns or questions to the client on behalf of the group members.</li>
+                <li><span style="font-weight:bold;">IaaS</span> - Infrastructure as a Service</li>
         </ul>
 
         <h3><span id="3.0.0">(3.0.0) Reference Material</span></h3>
@@ -272,6 +302,7 @@
                     <td>Implementation Front End</td>
                     <td>Ruth Schmidt</td>
                     <td></td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Implementation Back End</td>
@@ -327,21 +358,29 @@
         <span>This section of the SPMP details the management process for this project.</span>
         <div style="padding: 0px 10px;">
             <h4><span id="5.1.0">(5.1.0) Objectives and Priorities</span></h4>
-            <p>The objective of this project is to produce a streamlined web-based platform for investors and market enthusiasts, to view the prospective performance of popular stocks based on the analysis of Twitter sentiments. The top priorities include project completion within the specified deadline and the implementation of a fully-functional application.</p>
+            <p>The objective of this project is to produce a streamlined web-based platform for investors and market enthusiasts, to view the prospective performance of popular stocks based on the analysis of Twitter sentiments. Top priorities include project completion within the specified deadline and the implementation of a fully-functional application.</p>
             <h4><span id="5.1.0">(5.2.0) Monitoring and Reporting Mechanisms</span></h4>
             <ul>
                 <li>Weekly meetings on Thursdays and Sundays.</li>
+                <ul>
+                    <li>Meetings are separated out into development teams.</li>
+                    <li>Group meetings will be held as needed to approve deliverables and update other development teams.</li>
+                </ul>
                 <li>All contributions will be tracked using Google Sheets for documentation and GitHub for code.</li>
                 <li>Communication via the StockEye Discord server.</li>
-                <li>Documents collaborated upon with Google Docs and ClickUp.</li>
+                <ul>
+                    <li>Individual text channels for each deliverable allowing clear communication between teams.</li>
+                </ul>
+                <li>Documents collaborated upon utilizing Google Docs and ClickUp.</li>
             </ul>
         </div>
 
         <h3><span id="6.0.0">(6.0.0) Technical Process</span></h3>
-        <span>This section specifies the development process model and the technical methods and tools, and techniques to be used during development.</span>
+        <span>This section specifies the development process model and the technical methods, tools, and techniques to be used during development.</span>
         <div style="padding: 0px 10px;">
             <h4><span id="6.1.0">(6.1.0) Process Model</span></h4>
-            <p>The project was initiated on January 15, 2021 and terminated with the end of the Winter 2021 semester at Wilfrid Laurier University, on April 12, 2021. The project uses an object-oriented design methodology process and uses UML for the development of the software. The development process is organized in several activities, where the responsibilities of each activity, such as contributing and testing, is delegated to a subset of team members of the project. The products of these activities are finalized upon the approval of the designated Chief of the respective activity, along with a majority of the contributing members. The approved documents are considered work products and will become part of the official software documentation.</p>
+            <p>The project was initiated on January 15, 2021 and will be terminated with the end of the Winter 2021 semester at Wilfrid Laurier University, on April 12, 2021.</p>
+            <p>The project uses an object-oriented design methodology process and UML for the development of the software. The development process is organized into several activities, wherein the responsibilities of each activity, such as contributing and testing, are delegated to a subset of team members. The products of these activities are finalized upon the approval of the designated Chief of the respective deliverable, along with a majority of the contributing members. The approved documents are considered work products and will become part of the official software documentation.</p>
             <p>Major milestones are the completion of all major pieces of documentation (Requirements, Analysis, Design etc.) and the fully-functional implementation of the application.</p>
             <h4><span id="6.2.0">(6.2.0) Methods, Tools, Techniques</span></h4>
             <p>A listing of all the development methodologies, software, programming languages, and other tools used for the completion of project deliverables and non-deliverables:</p>
@@ -352,7 +391,7 @@
                 <li>Discord</li>
                 <li>ClickUp</li>
                 <li>Jupyter Notebook</li>
-                <li>Integrated development environments (IDE), such as:</li>
+                <li>Integrated Development Environments (IDE):</li>
                 <ul>
                     <li>Microsoft Visual Studio Code</li>
                     <li>Eclipse</li>
@@ -363,20 +402,23 @@
             <ul style="font-size:90%">
                 <li>Python 3</li>
                 <li>HTML</li>
+                <li>CSS</li>
                 <li>SQL</li>
             </ul>
             <h5>Web Frameworks</h5>
             <ul style="font-size:90%">
                 <li>Django Python 2.2</li>
             </ul>
+            <h4><span id="6.3.0">(6.3.0) Infrastructure plan</span></h4>
+            <p>The StockEye web application will be hosted on the cloud application platform Heroku. Linking Heroku to the StockEye repository on GitHub enables automatic synchronization between the production environment and GitHub master branch, removing infrastructure maintenance inherent to alternatives such as IaaS solutions.</p>
         </div>
 
         <h3><span id="7.0.0">(7.0.0) Supporting Process</span></h3>
         <span>This section outlines the supporting processes that span the duration of the project.<span>
         <div style="padding: 0px 10px;">
             <h4><span id="7.1.0">(7.1.0) Quality Assurance</span></h4>
-            <p>At each stage of development, every member of the group is expected to look at and approve the product. This allows each member to gain a firm understanding of the project at each step of development, enabling them to identify where improvements can be made. This particularly proves beneficial at the implementation stage, as it will help catch any errors or bugs that may have been left unacknowledged.</p>
-            <span>Furthermore, as the application is to be viewable on any device, thorough testing must be done on multiple devices and browsers.</span>
+            <p>At each stage of development, every member of the group is expected to review and approve the product. This allows each member to gain a firm understanding of the project at each step of development, enabling them to identify where improvements can be made and keep everyone on the same page. This proves particularly beneficial at the implementation stage, as it will help catch any errors or bugs that may have been left unacknowledged.</p>
+            <span>Furthermore, as the web application is intended to be accessible, thorough testing must be done on multiple devices and browsers.</span>
             <span>These will include:</span>
             <ul>
                 <li>Google Chrome</li>
@@ -387,10 +429,49 @@
                 <li>iOS device</li>
             </ul>
             <h4><span id="7.2.0">(7.2.0) Documentation</span></h4>
-            <p>For the sake of operation of code and the purpose of clarity and transparency, code will be thoroughly and properly documented. Overall group member contributions are tracked, using Google Sheets, to ensure credit is given where due.</p>
-            <p>GitHub will be used during the implementation phase, allowing for the tracking of all contributions and changes made to code. Furthermore, all members partaking in the implementation phase are expected to provide thorough commentary in their code to ease comprehension to collaborators.</p>
+            <p>For the purpose of clarity and transparency, code will be thoroughly and properly documented. Group member contributions are tracked, using Google Sheets, to ensure credit is given where due.</p>
+            <p>GitHub will be used during the implementation phase, allowing for precise tracking of all contributions and easy facilitation of code reviews. Furthermore, all members partaking in the implementation phase are expected to provide thorough commentary in their code to ease comprehension between collaborators.</p>
         </div>
-        <h3><span id="#Update-History">Update History</span></h3>
+        <h3><span id="#Change-History">Change History</span></h3>
+        <p>The SPMP is a living document, changing as the project progresses. Therefore, it is important to track what changes were made to the document, when those changes happened, and who made those changes. While Google Docs is used to track the editing history, the SPMP should include reference to major changes of the document within itself.</p>
+        <table class="vertical-table" style="font-size:70%; margin-left:auto; margin-right:auto;">
+                <tr>
+                    <th>Date</th>
+                    <th>Description of Changes</th>
+                    <th>Contributors</th>
+                <tr>
+                <tr>
+                    <td>February 3, 2021</td>
+                    <td>Initial draft of SPMP completed</td>
+                    <td>
+                        <ul style="list-style-type:none; padding-left: 0px;">
+                            <li>Campbell Leckie</li
+                            <li>Roy Ceyleon</li>>
+                            <li>Jeff Kolnick</li>
+                            <li>Nicholas Mills</li>
+                            <li>Tyler Price</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>February 4, 2021</td>
+                    <td>Final draft of SPMP completed</td>
+                    <td>
+                        <ul style="list-style-type:none; padding-left: 0px;">
+                            <li>Campbell Leckie</li>
+                            <li>Roy Ceyleon</li>
+                            <li>Jeff Kolnick</li>
+                            <li>Nicholas Mills</li>
+                            <li>Tyler Price</li>
+                            <li>Ruth Schmidt</li>
+                            <li>Yasmine Ali</li>
+                            <li>Anshul Kahtri</li>
+                            <li>Brayden Mckay</li>
+                            <li>Syed Ahmed</li>
+                        </ul>
+                    </td>
+                </tr>
+        </table>
         <br>
         <br>
         <p><a href="#Top">Return to Top</a></p>
