@@ -141,6 +141,61 @@ label:hover {
 	border: 1px solid #87CEEB;
 }
 
+.notice2 {
+	display: inline-table;
+	padding: 5px;
+	font-weight: normal;
+	font-size: 120%;
+	color: #A5A5A5;
+	background-color: #FBFAFA;
+	border: 1px solid #E3E3E3;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.notice3 {
+	display: inline-table;
+	padding: 5px;
+	font-weight: normal;
+	font-size: 100%;
+	color: #204a87;
+	background-color: #FBFAFA;
+	border: 1px solid #E3E3E3;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.notice4 {
+	display: inline-table;
+	padding: 5px;
+	font-weight: normal;
+	font-size: 100%;
+	color: #A5A5A5;
+	background-color: #FBFAFA;
+	border: 1px solid #E3E3E3;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.nav_button {
+	display: inline-table;
+	padding: 5px;
+	font-weight: normal;
+	font-size: 100%;
+	color: #204a87;
+	background-color: #FBFAFA;
+	border: 1px solid #E3E3E3;
+	text-align: center;
+	border-radius: 5px;
+}
+
+.nav_button:hover {
+	color: #fff;
+	background-color: #333;
+	border: 1px solid #111;
+	cursor: pointer;
+}
+
 .center {
 	text-align: center;
 }
@@ -704,6 +759,7 @@ textarea {
 	background-color: #fff;
 	border: 1px solid #ddd;
 	width: auto;
+	border-radius: 3px;
 }
 
 .generic-form-div {

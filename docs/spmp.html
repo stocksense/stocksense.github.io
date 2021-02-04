@@ -8,27 +8,28 @@
         <title>StockEye - SPMP</title>
     </head>
     <body style="background-color:white;">
-        <div style="width: 600px; margin: 0 auto">
         <h1 style="text-align:center;" id="Top">StockEye</h1>
-        <h2 style="text-align:left;">Software Project Management Plan</h2>
-        <div>
-            <p class="page-info">
-                <span style="font-weight: bold;">Version:</span>
-                <span class="values">1.0</span>
-                <br>
-                <span style="font-weight: bold;">Release Date:</span>
-                <span class="values">February 5, 2021</span>
-                <br>
-                <span style="font-weight: bold;">Last Updated:</span>
-                <span class="values">February 4, 2021</span>
-                <br>
-                <span style="font-weight: bold;">Authors:</span>
-                <span class="values">Campbell Leckie, Roy Ceyleon, Tyler Price, Jeff Kolnick</span>
-                <br>
-                <span style="font-weight: bold;">Editors:</span>
-                <span class="values">Yasmine Ali, Ruth Schmidt, Anshul Kahtri, Brayden Mckay, Syed Ahmed</span>
-            </p>
-        </div>
+        <div class="generic-form" style="width: 600px; margin: 0 auto">
+            <h2 style="text-align:left;">Software Project Management Plan</h2>
+            
+            <div>
+                <p class="page-info">
+                    <span style="font-weight: bold;">Version:</span>
+                    <span class="values">1.0</span>
+                    <br>
+                    <span style="font-weight: bold;">Release Date:</span>
+                    <span class="values">February 5, 2021</span>
+                    <br>
+                    <span style="font-weight: bold;">Last Updated:</span>
+                    <span class="values">February 4, 2021</span>
+                    <br>
+                    <span style="font-weight: bold;">Authors:</span>
+                    <span class="values">Campbell Leckie, Roy Ceyleon, Tyler Price, Jeff Kolnick</span>
+                    <br>
+                    <span style="font-weight: bold;">Editors:</span>
+                    <span class="values">Yasmine Ali, Ruth Schmidt, Anshul Kahtri, Brayden Mckay, Syed Ahmed</span>
+                </p>
+            </div>
 
         <p style="text-align:center; font-size:80%">The StockEye Software Project Management Plan was approved on February 4, 2021 by the CP317 StockEye group.<br>This group consisted of the following members.</p>
         <table class="team-table" style="text-align:center; font-size:80%; margin-left:auto;margin-right:auto; ">
@@ -169,8 +170,9 @@
                 <li><span style="font-weight:bold;">Tester</span> - A member of the Quality Assurance team for a specific deliverable.</li>
                 <li><span style="font-weight:bold;">QA</span> - Quality Assurance</li>
                 <li><span style="font-weight:bold;">Chief</span> - A member delegated the task of ensuring that a deliverable is completed on time and all contributing members are satisfying preliminary deadlines.</li>
-                <li><span style="font-weight:bold;">Communications Correspondent</span> - A project member delegated the task of communicating concerns or questions to the client on behalf of the group members.</li>
+                <li><span style="font-weight:bold;">Communications Correspondent</span> - A project member delegated the task of communicating questions or concerns to the client on behalf of the group members.</li>
                 <li><span style="font-weight:bold;">IaaS</span> - Infrastructure as a Service</li>
+                <li><span style="font-weight:bold;">API</span> - Application Programming Interface</li>
         </ul>
 
         <h3><span id="3.0.0">(3.0.0) Reference Material</span></h3>
@@ -380,11 +382,11 @@
         <div style="padding: 0px 10px;">
             <h4><span id="6.1.0">(6.1.0) Process Model</span></h4>
             <p>The project was initiated on January 15, 2021 and will be terminated with the end of the Winter 2021 semester at Wilfrid Laurier University, on April 12, 2021.</p>
-            <p>The project uses an object-oriented design methodology process and UML for the development of the software. The development process is organized into several activities, wherein the responsibilities of each activity, such as contributing and testing, are delegated to a subset of team members. The products of these activities are finalized upon the approval of the designated Chief of the respective deliverable, along with a majority of the contributing members. The approved documents are considered work products and will become part of the official software documentation.</p>
+            <p>The project uses an object-oriented design methodology process and UML for the design and documentation of the software. The development process is organized into several activities, wherein the responsibilities of each activity, such as contributing and testing, are delegated to a subset of team members. The products of these activities are finalized upon the approval of the designated Chief of the respective deliverable, along with a majority of the contributing members. The approved documents are considered work products and will become part of the official software documentation.</p>
             <p>Major milestones are the completion of all major pieces of documentation (Requirements, Analysis, Design etc.) and the fully-functional implementation of the application.</p>
             <h4><span id="6.2.0">(6.2.0) Methods, Tools, Techniques</span></h4>
             <p>A listing of all the development methodologies, software, programming languages, and other tools used for the completion of project deliverables and non-deliverables:</p>
-            <h5>Software</h5>
+            <h5>Tools</h5>
             <ul style="font-size:90%;">
                 <li>GitHub</li>
                 <li>Google Sheets and Google Docs</li>
@@ -397,6 +399,7 @@
                     <li>Eclipse</li>
                 </ul>
                 <li>Terminal applications, such as the built-in command prompts in Windows, Mac OSX, and Linux environments</li>
+                <li>Twitter API</li>            
             </ul>
             <h5>Programming Languages</h5>
             <ul style="font-size:90%">
@@ -410,7 +413,7 @@
                 <li>Django Python 2.2</li>
             </ul>
             <h4><span id="6.3.0">(6.3.0) Infrastructure plan</span></h4>
-            <p>The StockEye web application will be hosted on the cloud application platform Heroku. Linking Heroku to the StockEye repository on GitHub enables automatic synchronization between the production environment and GitHub master branch, removing infrastructure maintenance inherent to alternatives solutions such as IaaS.</p>
+            <p>The StockEye web application will be hosted on the cloud application platform Heroku. Linking Heroku to the StockEye repository on GitHub enables automatic synchronization between the production environment and GitHub master branch, removing infrastructure maintenance inherent to alternative solutions such as IaaS.</p>
         </div>
 
         <h3><span id="7.0.0">(7.0.0) Supporting Process</span></h3>
@@ -435,7 +438,7 @@
 
         <h3><span id="Change-History">Change History</span></h3>
         <p>The SPMP is a living document, changing as the project progresses. Therefore, it is important to track what changes were made to the document, when those changes happened, and who made those changes. While Google Docs is used to track the editing history, the SPMP should include reference to major changes of the document within itself.</p>
-        <table class="vertical-table" style="font-size:70%; margin-left:auto; margin-right:auto;">
+        <table class="vertical-table" style="font-size:80%; margin-left:auto; margin-right:auto;">
                 <tr>
                     <th>Date</th>
                     <th>Description of Changes</th>
@@ -473,10 +476,11 @@
                     </td>
                 </tr>
         </table>
-        <br>
-        <br>
-        <p><a href="#Top">Return to Top</a></p>
-        <p><a href="/">Back to Menu</a></p>
+
+        </div>
+        <div style="text-align: center">
+            <p class="nav_button"><a href="/">Back to Menu</a></p>
+            <p class="nav_button"><a href="#Top">Return to Top</a></p>
         </div>
     </body>
 </html>
