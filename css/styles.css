@@ -82,6 +82,11 @@ a img {
 a {
 	color: #4083c6;
 	text-decoration: none;
+	transition: 0.3s;
+}
+
+a:hover{
+	opacity: .5
 }
 
 input[type=text], input[type=password], input[type=file], textarea {
@@ -187,6 +192,7 @@ label:hover {
 	border: 1px solid #E3E3E3;
 	text-align: center;
 	border-radius: 5px;
+	transition: 0.5s;
 }
 
 .nav_button:hover {
