@@ -8,10 +8,6 @@ function init() {
 }
 
 function showInfo(data, tabletop) {
-    console.log(data)
-    var tr = document.createElement('tr');
-    items = tabletop.sheets("Team Info").all();
-    console.log(items)
 
     var myTableDiv = document.getElementById("TeamInfo");
     var table = document.createElement('TABLE');
@@ -60,5 +56,4 @@ function addTable(tabletop, myTableDiv, table, tableBody, items) {
     
 }
  
-
 window.addEventListener('DOMContentLoaded', init)
