@@ -1,4 +1,4 @@
-var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/11tQS39w9q9W1MERg3UhBjiJWv4SQz_Y361bJUtJV2Uk/pubhtml';
+var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1UV2Vz0KWSRJSuvSG7IWf2T7W9WFSG8DfsOa_FPF_m_8/pubhtml';
 
 function init() {
     Tabletop.init( { key: publicSpreadsheetUrl,
@@ -24,8 +24,8 @@ function showInfo(data, tabletop) {
     var myTableDiv = document.getElementById("ContributionTable");
     var table = document.createElement('TABLE');
     var tableBody = document.createElement('TBODY');
-    table.className = "horizontal-table";
-    table.style = "font-size:90%; margin-left:auto;margin-right:auto;"
+    table.className = "vertical-table";
+    table.style = "font-size:80%; margin-left:auto;margin-right:auto;"
     $("<th></th>").text("Date").appendTo(tableBody);
     $("<th></th>").text("Name").appendTo(tableBody);
     $("<th></th>").text("Contribution").appendTo(tableBody);
@@ -45,8 +45,8 @@ function addTable(tabletop, myTableDiv, table, tableBody, items) {
     
     for(i=0; i<items.length; i++){
         var td = document.createElement('TD');
-        td.style ="text-align:center"
-        //td.width='100'
+        td.style ="text-align:left"
+        td.width='100'
         td.appendChild(document.createTextNode(items[i]));
         tr.appendChild(td);
     }
