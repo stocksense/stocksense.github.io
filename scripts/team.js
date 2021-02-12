@@ -31,7 +31,6 @@ function showInfo(data, tabletop) {
     $("<th></th>").text("Contribution").appendTo(tableBody);
     $("<th colspan='2'></th>").text("Time Spent").appendTo(tableBody);
     tabletop.sheets("Contribution Log").all().forEach(function(item, index, array) {
-        console.log(item)
         addTable(tabletop, myTableDiv, table, tableBody, [item.Timestamp, item.Name, item.Description, item["Approximate Time Spent"] +" "+ item["Specifications Website Draft"] ])
     })
 
@@ -47,7 +46,7 @@ function addTable(tabletop, myTableDiv, table, tableBody, items) {
     for(i=0; i<items.length; i++){
         var td = document.createElement('TD');
         td.style ="text-align:center"
-        //td.width='500px'
+        //td.width='100'
         td.appendChild(document.createTextNode(items[i]));
         tr.appendChild(td);
     }
