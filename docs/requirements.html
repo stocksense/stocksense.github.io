@@ -14,13 +14,13 @@
             <div>
                 <p class="page-info">
                     <span style="font-weight: bold;">Version:</span>
-                    <span class="values">-</span>
+                    <span class="values">1.0</span>
                     <br>
                     <span style="font-weight: bold;">Release Date:</span>
                     <span class="values">Feburary 12, 2021</span>
                     <br>
                     <span style="font-weight: bold;">Last Updated:</span>
-                    <span class="values">-</span>
+                    <span class="values">Feburary 12, 2021</span>
                     <br>
                     <span style="font-weight: bold;">Authors:</span>
                     <span class="values">Michael Okenye, Jeff Kolnick, Anshul Khatri, Perikles Tsikrikis</span>
@@ -77,64 +77,164 @@
                     <li><a href="#3.2.0">Functions</a></li>
                     <li><a href="#3.3.0">Database</a></li>
                     <li><a href="#3.4.0">Performance Requirements</a></li>
-                    <li><a href="#3.5.0">Security</a></li>
-                    <li><a href="#3.6.0">Portability</a></li>
+                    <li><a href="#3.5.0">Software System Attributes</a></li>
+                    <ul>
+                        <li><a href="#3.5.1">Security</a></li>
+                        <li><a href="#3.5.2">Portability</a></li>
+                        <li><a href="#3.5.3">Availability and Reliability</a></li>
+                    </ul>
+                    <li><a href="#3.6.0">User Classes</a></li>
                 </ul>
 
                 <li><a href="#Change-History">Change History</a></li>
             </ul>
 
             <h3><span id="1.0.0">(1.0.0) Introduction</span></h3>
-            <p>...</p>
+            <p>The following provides an overview of the StockEye SRS.</p>
             <div style="padding: 0px 10px;">
                 <h4><span id="1.1.0">(1.1.0) Project Summary</span></h4>
-                <p>...</p>
+                <p>StockEye is a web application that aggregates and analyses tweets related to the stock market from the popular social media platform Twitter, and offers information regarding the public sentiments of stocks and volume metrics to its users. StockEye seeks to serve its audience in multiple ways. For one, Twitter is a valuable source of data, as it currently acts as a hub for global public opinion. Due to the impact that public opinion has on the market, the analysis of Twitter data presented by StockEye enables its users to make more informed investment decisions. Additionally, StockEye will save users time, as they will no longer be required to research and analyse the Twitter sentiments themselves.</p>
                 <h4><span id="1.2.0">(1.2.0) Purpose</span></h4>
-                <p>...</p>
+                <p>This document covers all the software requirements and features for the StockEye application, and is primarily intended for the client (David Brown), the project team, and other interested parties, both present and future. It will ensure that all necessary components are included and serve as a basis for the project.</p>
                 <h4><span id="1.3.0">(1.3.0) Scope</span></h4>
-                <p>...</p>
+                <p>This project will produce the web application StockEye. This product will assess the intent of tweets as well as tweet volume regarding stocks chosen by its users and compile and present them in an easily comprehensible format. It will thus give an immediate overview of  their Watchlist and allow for quick decision making as the market may dictate without having to scour Twitter for the relevant information.</p>
                 <h4><span id="1.4.0">(1.4.0) Definitions</span></h4>
-                <p>...</p>
+                <ul>
+                    <li><b>SRS</b> - StockEye Software Requirements Specification document</li>
+                    <li><b>Twitter Sentiment</b> - The attitude, thought or feeling indicated by a tweet.</li>
+                    <li><b>Tweet</b> - A post made on the Twitter social network.</li>
+                    <li><b>Tweet Volume</b> - The amount of tweets made within a specific time frame.</li>
+                    <li><b>Tweepy</b> - An open source Python package which allows access to the Twitter’s API with Python.</li>
+                    <li><b>Popular Stocks</b> - Trending stocks with either positive or negative sentiments. </li>
+                    <li><b>IaaS</b> - Infrastructure as a Service</li>
+                    <li><b>GUI</b> - Graphical User Interface</li>
+                    <li><b>The Client</b> - David Brown</li>
+                    <li><b>User</b> - The person, or persons, who operate or interact directly with the application.</li>
+                    <li><b>Watchlist</b> - List of stock monitored by a user for potential investment opportunities.</li>
+                    <li><b>Tester</b> - A member of the Quality Assurance team for a specific deliverable.</li>
+                </ul>
                 <h4><span id="1.5.0">(1.5.0) References</span></h4>
-                <p>...</p>
+                <p>A complete list of all documents and other sources of information referenced.</p>
+                <ul>
+                    <li><a target="_blank" href="https://bohr.wlu.ca/cp317/notes/IEEE_830.pdf">IEEE Recommended Practice for Software Requirements Specifications (1998)</a></li>
+                    <li><a target="_blank" href="https://bohr.wlu.ca/cp317/samples.php">CP317: Samples</a></li>
+                    <li><a target="_blank" href="https://bohr.wlu.ca/cp317/notes/06_requirements.php">CP317 Notes: Requirements</a></li>
+                    <li><a target="_blank" href="https://www.csc2.ncsu.edu/faculty/healey/tweet_viz/#:~:text=Sentiment%20is%20defined%20as%20%22an,the%20confidence%20in%20our%20estimates.&text=As%20of%20March%202011%2C%20Twitter,200%20million%20tweets%20per%20day.">Twitter Sentiment Visualization</a></li>
+                </ul>
                 <h4><span id="1.6.0">(1.6.0) Overview</span></h4>
-                <p>...</p>
+                <p>This document contains all functional requirements for the StockEye web application. It details how the product will operate, its limitations and projected user base. It first establishes the context in which StockEye is being formulated and subsequently identifies the essential features for it to be a success.</p>
             </div>
 
-            <h3><span id="2.0.0">(2.0.0) Introduction</span></h3>
-            <p>...</p>
+            <h3><span id="2.0.0">(2.0.0) Overall Description</span></h3>
+            <p>The following provides insight into the StockEye product perspective, its functions, the characteristics of the user base, constraints associated with development, along with assumptions and dependencies which provide information about application compatibility.</p>
             <div style="padding: 0px 10px;">
                 <h4><span id="2.1.0">(2.1.0) Product Perspective</span></h4>
-                <p>...</p>
+                <p>StockEye builds directly off of Twitter, utilizing the Tweepy API. Through this it will be able to import tweets and assemble it into data to help inform its users of potential rises and falls in the stocks they are most interested in.</p>
                 <h4><span id="2.2.0">(2.2.0) Product Functions</span></h4>
-                <p>...</p>
+                <ul>
+                    <li>Interpret tweets.</li>
+                    <li>Aggregate sentiment data - tracks rise and fall of a particular stock.</li>
+                    <li>Track volume of tweets associated with intended stocks within a specific timeframe.</li>
+                    <li>Allow user choice of interested stocks.</li>
+                    <li>Easy-to-follow organizational structure.</li>
+                </ul>
                 <h4><span id="2.3.0">(2.3.0) User Characteristics</span></h4>
-                <p>...</p>
+                <ul>
+                    <li>Shareholder (current or potential)</li>
+                    <li>Savvy (tech and financial)</li>
+                    <li>Financial interest</li>
+                    <li>Familiarity with social media</li>
+                </ul>
                 <h4><span id="2.4.0">(2.4.0) Constraints</span></h4>
-                <p>...</p>
+                <ul>
+                    <li>Time - to be completed no later than April 12, 2021.</li>
+                    <li>Tools limited to that which are freely available.</li>
+                    <li>Inexperience and unfamiliarity with the prerequisite technologies demanded by the objectives of the application.</li>
+                    <li>Limited communication capability due to COVID-19 pandemic restrictions.</li>
+                </ul>
                 <h4><span id="2.5.0">(2.5.0) Assumptions and Dependencies</span></h4>
-                <p>...</p>
+                <ul>
+                    <li>Deliverables will be completed by several team members; this includes writers and testers.</li>
+                    <li>Deliverables will be reviewed by the entire team, following approval by the quality assurance team assigned to the respective deliverable.</li>
+                    <li>Inexperience and unfamiliarity with the prerequisite technologies demanded by the objectives of the application.</li>
+                    <li>Limited communication capability due to COVID-19 pandemic restrictions.</li>
+                </ul>
             </div>
 
             <h3><span id="3.0.0">(3.0.0) Specific Requirements</span></h3>
-            <p>...</p>
+            <p>The following contains all of the software requirements, along with pertinent and sufficient details to enable the design, implementation, and assessment of the StockEye application.</p>
             <div style="padding: 0px 10px;">
                 <h4><span id="3.1.0">(3.1.0) External Interfaces</span></h4>
-                <p>...</p>
+                <ul>
+                    <li>HTTP web browser</li>
+                    <li>Login/Registration page</li>
+                    <li>Overview of popular stocks</li>
+                    <li>Input of desired stock watchlist</li>
+                    <li>Report selected stocks’ status</li>
+                    <li>GUI must be easy to navigate and understand</li>
+                    <li>Dismissable pop-ups highlighting features and their uses</li>
+                    <li>Simple graphs with intuitive filters to provide instant data on:</li>
+                    <ul>
+                        <li>Sentiments</li>
+                        <li>Value</li>
+                        <li>Current and over time</li>
+                    </ul>
+                </ul>
                 <h4><span id="3.2.0">(3.2.0) Functions</span></h4>
-                <p>...</p>
+                <ul>
+                    <li>Interpret tweet sentiment.</li>
+                    <li>Track selected tweet sentiments over time.</li>
+                    <li>Track selected tweet volume over time.</li>
+                </ul>
                 <h4><span id="3.3.0">(3.3.0) Database</span></h4>
-                <p>...</p>
+                <ul>
+                    <li>Stock names</li>
+                    <li>Stock values</li>
+                    <li>Stock sentiments</li>
+                    <li>Stock volume</li>
+                    <li>User Watchlist</li>
+                    <li>User account information and settings</li>
+                </ul>
                 <h4><span id="3.4.0">(3.4.0) Performance Requirements</span></h4>
-                <p>...</p>
-                <h4><span id="3.5.0">(3.5.0) Security</span></h4>
-                <p>...</p>
-                <h4><span id="3.6.0">(3.6.0) Portability</span></h4>
-                <p>...</p>
+                <ul>
+                    <li>Previously selected stocks reported in under one second.</li>
+                    <li>Newly selected stocks assessed and reported within one minute.</li>
+                    <li>Information sentiment analysis is trustworthy and accurate.</li>
+                    <li>Increases in user base and/or Watchlist size should not significantly interfere with performance.</li>
+                    <li>Ensure the app is easy to maintain.</li>
+                </ul>
+                <h4><span id="3.5.0">(3.5.0) Software System Attributes</span></h4>
+                <div style="padding: 0px 10px;">
+                    <h5><span id="3.5.1">(3.5.1) Security</span></h5>
+                    <ul>
+                        <li>Watchlist logged and encrypted.</li>
+                        <li>Sessions timeout after five minutes of inactivity.</li>
+                        <li>User account passwords must consist of:</li>
+                        <ul>
+                            <li>At least 1 uppercase character</li>
+                            <li>At least 1 numeric character</li>
+                            <li>At least 1 symbolic character</li>
+                            <li>At least 8 characters in total</li>
+                        </ul>
+                        <li>User account passwords are hashed and stored in the database.</li>
+                        <li>User account passwords can only be reset by two-factor authentication.</li>
+                    </ul>
+                    <h5><span id="3.5.2">(3.5.2) Portability</span></h5>
+                    <ul>
+                        <li>StockEye is accessible through any web browser.</li>
+                        <li>No aspect of StockEye is host-dependent.</li>
+                    </ul>
+                    <h5><span id="3.5.3">(3.5.3) Availability and Reliability</span></h5>
+                    <ul>
+                        <li>StockEye is always available and accessible.</li>
+                    </ul>
+                </div>
+                <h4><span id="3.6.0">(3.6.0) User Classes</span></h4>
+                <p>Different sets of functions are available to different classes of users. The following diagrams illustrate this...</p>
             </div>
 
         <h3><span id="Change-History">Change History</span></h3>
-            <p>The SRS is a living document, changing as the project progresses. Therefore, it is important to track what changes were made to the document, when those changes happened, and who made those changes. While Google Docs is used to track the editing history, the SRS includes references to major changes of the document within itself.</p>
+            <p>The SRS is a living document, changing as the project progresses. While Google Docs is used to track the editing history, the SRS includes references to major changes of the document within itself.</p>
             <table class="vertical-table" style="font-size:80%; margin-left:auto; margin-right:auto;">
                     <tr>
                         <th>Date</th>
@@ -146,16 +246,26 @@
                         <td>Initial draft of Requirements completed</td>
                         <td>
                             <ul style="list-style-type:none; padding-left: 0px;">
-                                <li>...</li>
+                                <li>Michael Okenye</li>
+                                <li>Jeff Kolnick</li>
+                                <li>Anshul Khatri</li>
+                                <li>Perikles Tsikrikis</li>
                             </ul>
                         </td>
                     </tr>
                     <tr>
-                        <td>February 11, 2021</td>
+                        <td>February 12, 2021</td>
                         <td>Final draft of Requirements completed</td>
                         <td>
                             <ul style="list-style-type:none; padding-left: 0px;">
-                                <li>...</li>
+                                <li>Michael Okenye</li>
+                                <li>Jeff Kolnick</li>
+                                <li>Anshul Khatri</li>
+                                <li>Perikles Tsikrikis</li>
+                                <li>Campbell Leckie</li>
+                                <li>Nicolas Mills</li>
+                                <li>Ruth Schmidt</li>
+                                <li>Roy Ceyleon</li>
                             </ul>
                         </td>
                     </tr>
