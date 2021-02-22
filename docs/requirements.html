@@ -235,8 +235,105 @@
                     </ul>
                 </div>
                 <h4><span id="3.6.0">(3.6.0) Actors and Use Cases</span></h4>
-                <p>The user interacting with StockEye through their web-browser is the sole actor. The following UML Use Case diagram illustrates how the user will interact with the use cases.</p>
+                <p>The user interacting with StockEye through their web-browser is the sole actor; however, this actor can either be an unregistered or registered user. The following UML Use Case diagram illustrates how the user will interact with the use cases.</p>
                 <img src="\Images\requirements\uml-user_case.png" alt="User Case" style="display: block; margin-left:auto;margin-right:auto; width: 500px;">            
+                <h5>Actors</h5>
+                <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                    <tr>
+                        <th>Actor</th>
+                        <th>Characteristics and Properties</th>
+                    <tr>
+                    <tr>
+                        <td>Unregistered User</td>
+                        <td>
+                            <ul style="list-style-type:none; padding-left: 0px;">
+                                <li>Users that have not logged-in with an account.</li>
+                                <li>Able to interact with basic use cases.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Registered User</td>
+                        <td>
+                            <ul style="list-style-type:none; padding-left: 0px;">
+                                <li>Users that have logged-in with an account.</li>
+                                <li>Inherits all the use cases accessible to Unregistered Users, except Create Account.</li>
+                                <li>Additional use cases accessible.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <h5>Use Cases</h5>
+                <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                    <tr>
+                        <th>Use Cases</th>
+                        <th>Description</th>
+                    <tr>
+                    <tr>
+                        <td>Create Account</td>
+                        <td>Register a user account.</td>
+                    </tr>
+                    <tr>
+                        <td>Log-in</td>
+                        <td>Log-in using registered user account.</td>
+                    </tr>
+                    <tr>
+                        <td>View Stock List</td>
+                        <td>View the complete list of Stocks available.</td>
+                    </tr>
+                    <tr>
+                        <td>Filter Stocks</td>
+                        <td>Filter the Stock List using selected criteria.</td>
+                    </tr>
+                    <tr>
+                        <td>Filter by Stock Name</td>
+                        <td>A criteria used to filter the Stock List.</td>
+                    </tr>
+                    <tr>
+                        <td>Filter by Sentiment</td>
+                        <td>A criteria used to filter the Stock List.</td>
+                    </tr>
+                    <tr>
+                        <td>Filter by Stock Price</td>
+                        <td>A criteria used to filter the Stock List.</td>
+                    </tr>
+                    <tr>
+                        <td>View Trending Stock</td>
+                        <td>View the currently trending stocks on Twitter from the Stock List.</td>
+                    </tr>
+                    <tr>
+                        <td>View Stock Sentiments</td>
+                        <td>View the sentiment of a selected stock.</td>
+                    </tr>
+                    <tr>
+                        <td>View Relevant Tweets</td>
+                        <td>View popular tweets contributing to the sentiment of a selected stock.</td>
+                    </tr>
+                    <tr>
+                        <td>Recover Password</td>
+                        <td>Password recovery, in case account password is forgotten.</td>
+                    </tr>
+                    <tr>
+                        <td>Change Password</td>
+                        <td>The changing of current account password.</td>
+                    </tr>
+                    <tr>
+                        <td>View/Manage Watchlist</td>
+                        <td>View or manage user account Watchlist.</td>
+                    </tr>
+                    <tr>
+                        <td>Add to Watchlist</td>
+                        <td>Add a stock to the user account Watchlist.</td>
+                    </tr>
+                     <tr>
+                        <td>Remove from Watchlist</td>
+                        <td>Remove a stock from the user account Watchlist.</td>
+                    </tr>
+                     <tr>
+                        <td>Set Up Notifications</td>
+                        <td>Set up a notifications either by email or text regarding sentiment fluctuations of selected stocks.</td>
+                    </tr>
+                </table>
             </div>
 
         <h3><span id="Change-History">Change History</span></h3>
@@ -278,6 +375,15 @@
                     <tr>
                         <td>February 14, 2021</td>
                         <td>User Case diagram update</td>
+                        <td>
+                            <ul style="list-style-type:none; padding-left: 0px;">
+                                <li>Roy Ceyleon</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>February 22, 2021</td>
+                        <td>Updated Actors and Use Cases</td>
                         <td>
                             <ul style="list-style-type:none; padding-left: 0px;">
                                 <li>Roy Ceyleon</li>
