@@ -31,7 +31,7 @@ function showInfo(data, tabletop) {
     $("<th></th>").text("Contribution").appendTo(tableBody);
     $("<th colspan='2'></th>").text("Time Spent").appendTo(tableBody);
     tabletop.sheets("Contribution Log").all().forEach(function(item, index, array) {
-        addTable(tabletop, myTableDiv, table, tableBody, [item.Timestamp, item.Name, item.Description, item["Approximate Time Spent"] +" "+ item["Specifications Website Draft"] ])
+        addTable(tabletop, myTableDiv, table, tableBody, [item.Timestamp, item.Name, item.Description, item["Approximate Time Spent"] +" "+ item["Specifications: Preliminary Website Draft"] ])
     })
 
 }
