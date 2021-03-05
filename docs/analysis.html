@@ -20,13 +20,13 @@
                     <span class="values">March 5, 2021</span>
                     <br>
                     <span style="font-weight: bold;">Last Updated:</span>
-                    <span class="values">-</span>
+                    <span class="values">March 4, 2021</span>
                     <br>
                     <span style="font-weight: bold;">Authors:</span>
-                    <span class="values">Nicolas Mills, Syed Ahmed, Perikles Tsikrikis, Roy Ceyleon, Michael Okenye, Leron Bergelson</span>
+                    <span class="values">Nicolas Mills, Roy Ceyleon, Perikles Tsikrikis, Michael Okenye, Syed Ahmed</span>
                     <br>
                     <span style="font-weight: bold;">Editors:</span>
-                    <span class="values">Anshul Khatri, Jeff Kolnick, Yasmine Ali, Ruth Schmidt, Brayden Mckay</span>
+                    <span class="values">Jeff Kolnick, Yasmine Ali, Ruth Schmidt, Brayden Mckay, Anshul Khatri</span>
                 </p>
             </div>
 
@@ -34,7 +34,7 @@
             <ul>
                 <li><a href="#1.0.0">Introduction</a></li>
                 <ul>
-                    <li><a href="#1.1.0">Summary</a></li>
+                    <li><a href="#1.1.0">Project Summary</a></li>
                     <li><a href="#1.2.0">Purpose</a></li>
                     <li><a href="#1.3.0">References</a></li>
                 </ul>
@@ -53,7 +53,8 @@
                         <li><a href="#3.2.2">Filter Stock Controller Class</a></li>
                         <li><a href="#3.2.3">Stock Controller Class</a></li>
                         <li><a href="#3.2.4">User Controller Class</a></li>
-                        <li><a href="#3.2.5">WatchList Controller Class</a></li>
+                        <li><a href="#3.2.5">Watchlist Controller Class</a></li>
+                        <li><a href="#3.2.6">Registration Controller Class</a></li>
                     </ul>
                     <li><a href="#3.3.0">Class Diagram</a></li>
                 </ul>
@@ -67,51 +68,274 @@
                 <h4><span id="1.1.0">(1.1.0) Project Summary</span></h4>
                 <p>StockEye is a web application that aggregates and analyses tweets related to the stock market from the popular social media platform Twitter, and offers information regarding the public sentiments of stocks and volume metrics to its users. StockEye seeks to serve its audience in multiple ways. For one, Twitter is a valuable source of data, as it currently acts as a hub for global public opinion. Due to the impact that public opinion has on the market, the analysis of Twitter data presented by StockEye enables its users to make more informed investment decisions. Additionally, StockEye will save users time, as they will no longer be required to research and analyse the Twitter sentiments themselves.</p>
                 <h4><span id="1.2.0">(1.2.0) Purpose</span></h4>
-                <p>This document will cover the analysis for StockEye and describe all of its features and functionalities in detail and provide diagrams to aid comprehension.</p>
+                <p>This document will cover the analysis for StockEye and describe all of its features and functionalities in detail and provide diagrams to aid comprehension. This will set the foundation upon which important design refinements will be made.</p>
                 <h4><span id="1.3.0">(1.3.0) References</span></h4>
-                <p>...</p>
+                <p>A complete list of all documents and other sources of information referenced.</p>
+                <ul>
+                    <li><a target="_blank" href="https://bohr.wlu.ca/cp317/notes/IEEE_830.pdf">IEEE Recommended Practice for Software Requirements Specifications (1998)</a></li>
+                    <li><a target="_blank" href="https://bohr.wlu.ca/cp317/notes/08_analysis.php">CP317 Notes: Analysis</a></li>
+                    <li><a target="_blank" href="https://stocksense.github.io/docs/requirements.html">StockEye SPMP</a></li>
+                </ul>
             </div>
             
             <h3><span id="2.0.0">(2.0.0) Object Classification</span></h3>
             <p>This section describes all the entity, boundary, and control objects comprising the StockEye application.</p>
-            <div style="padding: 0px 10px;">
+            <div style="padding: 0px 50px;">
                 <h4><span id="2.1.0">(2.1.0) Entity Objects</span></h4>
-                <ul>
-                    <li></li>
-                </ul>
+                <table class="horizontal-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                    <tr>
+                        <th>Entity</th>
+                        <th>Description</th>
+                    <tr>
+                    <tr>
+                        <td>User</td>
+                        <td>The user interacting with StockEye</td>
+                    </tr>
+                    <tr>
+                        <td>Member</td>
+                        <td>A User that is logged-in.</td>
+                    </tr>
+                    <tr>
+                        <td>Visitor</td>
+                        <td>A User that is not logged-in.</td>
+                    </tr>
+                   <tr>
+                        <td>Database</td>
+                        <td>The StockEye Database, which stores all data utilized.</td>
+                    </tr>
+                </table>
                 <h4><span id="2.2.0">(2.2.0) Boundary Objects</span></h4>
-                <ul>
-                    <li></li>
-                </ul>
+                <table class="horizontal-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                    <tr>
+                        <th>Boundary</th>
+                        <th>Description</th>
+                    <tr>
+                    <tr>
+                        <td>WatchListView</td>
+                        <td>Displays the User’s Watchlist(s).</td>
+                    </tr>
+                    <tr>
+                        <td>StockView</td>
+                        <td>Displays information about a Stock, such as its name, price, sentiment and relevant tweets.</td>
+                    </tr>
+                    <tr>
+                        <td>FilterStockView</td>
+                        <td>Displays a list of Stocks based on applied conditional filters.</td>
+                    </tr>
+                    <tr>
+                        <td>UserLoginView</td>
+                        <td>Displays a login form for a User to sign into the software.</td>
+                    </tr>
+                    <tr>
+                        <td>AccountSettingsView</td>
+                        <td>Displays current User account information.</td>
+                    </tr>
+                    <tr>
+                        <td>RegistrationView</td>
+                        <td>Displays User registration form.</td>
+                    </tr>
+                    <tr>
+                        <td>HomeView</td>
+                        <td>Displays a list of Stocks based on a default conditional filter, such as highest sentiment.</td>
+                    </tr>
+                </table>
+
                 <h4><span id="2.3.0">(2.3.0) Control Objects</span></h4>
-                <ul>
-                    <li></li>
-                </ul>
+                <table class="horizontal-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                    <tr>
+                        <th>Control</th>
+                        <th>Description</th>
+                    <tr>
+                    <tr>
+                        <td>UserController</td>
+                        <td>Coordinates actions made on a User entity.</td>
+                    </tr>
+                    <tr>
+                        <td>FilterStockController</td>
+                        <td>Coordinates the application of filters on a list of Stocks.</td>
+                    </tr>
+                    <tr>
+                        <td>WatchlistController</td>
+                        <td>Coordinates the retrieval of a User’s Watchlist(s).</td>
+                    </tr>
+                    <tr>
+                        <td>StockController</td>
+                        <td>Coordinates the display of a specified Stock.</td>
+                    </tr>
+                    <tr>
+                        <td>AccountSettingsController</td>
+                        <td>Coordinates changes made to a User’s account information.</td>
+                    </tr>
+                    <tr>
+                        <td>RegistrationController</td>
+                        <td>Coordinates User registration.</td>
+                    </tr>
+                </table>
             </div>
 
             <h3><span id="3.0.0">(3.0.0) Diagrams</span></h3>
-            <p>...</p>
+            <p>This section provides details and diagrams exhibiting the interactions between the various objects in StockEye.</p>
             <div style="padding: 0px 10px;">
                 <h4><span id="3.1.0">(3.1.0) Boundary/Control/Entity Diagram</span></h4>
-                <p>...</p>
+                <img src="\img\analysis\3_1_0.png" alt="3.1.0" style="display: block; margin-left:auto;margin-right:auto; width: 600px;">
                 <h4><span id="3.2.0">(3.2.0) State Diagrams</span></h4>
-                <p>...</p>
+                <p>This subsection provides details and diagrams exhibiting the control objects in StockEye at a deeper level.</p>
                 <div style="padding: 0px 10px;">
-                        <h4><span id="3.2.0">(3.2.1) Account Settings Controller Class</span></h4>
-                        <p>...</p>
-                        <h4><span id="3.2.0">(3.2.2) Filter Stock Controller Class</span></h4>
-                        <p>...</p>
-                        <h4><span id="3.2.0">(3.2.3) Stock Controller Class</span></h4>
-                        <p>...</p>
-                        <h4><span id="3.2.0">(3.2.4) User Controller Class</span></h4>
-                        <p>...</p>
-                        <h4><span id="3.2.0">(3.2.5) WatchList Controller Class</span></h4>
-                        <p>...</p>
+                        <h4><span id="3.2.1">(3.2.1) Account Settings Controller Class</span></h4>
+                        <img src="\img\analysis\3_2_1.png" alt="3.2.1" style="display: block; margin-left:auto;margin-right:auto; width: 250px;">
+                        <table class="horizontal-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                            <tr>
+                                <th>State</th>
+                                <th>Description</th>
+                            <tr>
+                            <tr>
+                                <td>View Account Settings</td>
+                                <td>View current account settings.</td>
+                            <tr>
+                            <tr>
+                                <td>Modify Account Settings</td>
+                                <td>Modify desired account settings (password, email address etc.)</td>
+                            <tr>
+                            <tr>
+                                <td>Apply Modifications</td>
+                                <td>Apply and save modifications made to account settings.</td>
+                            <tr>
+                        </table>
+                        <h4><span id="3.2.2">(3.2.2) Filter Stock Controller Class</span></h4>
+                        <img src="\img\analysis\3_2_2.png" alt="3.2.2" style="display: block; margin-left:auto;margin-right:auto; width: 200px;">
+                        <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                            <tr>
+                                <th>State</th>
+                                <th>Description</th>
+                            <tr>
+                            <tr>
+                                <td>View Stocks</td>
+                                <td>View a list of all available Stocks.</td>
+                            <tr>
+                            <tr>
+                                <td>Select Filter</td>
+                                <td>Choose how to filter the list of Stocks from a selection of filtering options.</td>
+                            <tr>
+                            <tr>
+                                <td>Apply Filter</td>
+                                <td>Apply the selected filters.</td>
+                            <tr>
+                        </table>
+                        <h4><span id="3.2.3">(3.2.3) Stock Controller Class</span></h4>
+                        <img src="\img\analysis\3_2_3.png" alt="3.2.3" style="display: block; margin-left:auto;margin-right:auto; width: 200px;">
+                        <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                            <tr>
+                                <th>State</th>
+                                <th>Description</th>
+                            <tr>
+                            <tr>
+                                <td>View Stock</td>
+                                <td>View information regarding a selected Stock, such as name, price, sentiment, sentiment history, and relevant tweets.</td>
+                            <tr>
+                            <tr>
+                                <td>Save Stock to Watchlist</td>
+                                <td>Add the Stock currently being viewed to an existing Watchlist.</td>
+                            <tr>
+                        </table>
+                        <h4><span id="3.2.4">(3.2.4) User Controller Class</span></h4>
+                        <img src="\img\analysis\3_2_4.png" alt="3.2.4" style="display: block; margin-left:auto;margin-right:auto; width: 150px;">
+                        <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                            <tr>
+                                <th>State</th>
+                                <th>Description</th>
+                            <tr>
+                            <tr>
+                                <td>Login User</td>
+                                <td>The User logs in</td>
+                            <tr>
+                            <tr>
+                                <td>Logout User</td>
+                                <td>The User logs out.</td>
+                            <tr>
+                        </table>
+                        <h4><span id="3.2.5">(3.2.5) Watchlist Controller Class</span></h4>
+                        <img src="\img\analysis\3_2_5.png" alt="3.2.5" style="display: block; margin-left:auto;margin-right:auto; width: 350px;">
+                        <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                            <tr>
+                                <th>State</th>
+                                <th>Description</th>
+                            <tr>
+                            <tr>
+                                <td>Create Watchlist</td>
+                                <td>Create a new Watchlist.</td>
+                            <tr>
+                            <tr>
+                                <td>Access Watchlists</td>
+                                <td>View all available Watchlists the User has created.</td>
+                            <tr>
+                            <tr>
+                                <td>Edit Watchlist</td>
+                                <td>Modify an existing Watchlist. This includes renaming the Watchlist, adding a new Stock to the Watchlist, and removing an existing Stock from the Watchlist.</td>
+                            <tr>
+                            <tr>
+                                <td>Delete Watchlists</td>
+                                <td>Delete an existing Watchlist.</td>
+                            <tr>
+                            <tr>
+                                <td>View Watchlists</td>
+                                <td>View a selected Watchlist from existing Watchlists.</td>
+                            <tr>
+                        </table>
+                        <h4><span id="3.2.6">(3.2.6) Registration Controller Class</span></h4>
+                        <img src="\img\analysis\3_2_6.png" alt="3.2.6" style="display: block; margin-left:auto;margin-right:auto; width: 240px;">
+                        <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                            <tr>
+                                <th>State</th>
+                                <th>Description</th>
+                            <tr>
+                            <tr>
+                                <td>View Registration Form</td>
+                                <td>Displays registration form.</td>
+                            <tr>
+                            <tr>
+                                <td>Submit Registration Form</td>
+                                <td>User submission of registration form.</td>
+                            <tr>
+                            <tr>
+                                <td>Validate Registration Information</td>
+                                <td>User submitted registration information is validated. If invalid, the User is shown the invalid information, else registration is successful.</td>
+                            <tr>
+                            <tr>
+                                <td>View Log-in</td>
+                                <td>Displays log-in page.</td>
+                            <tr>
+                        </table>
                 </div>
+                <h4><span id="3.3.0">(3.3.0) Class Diagram</span></h4>
+                <img src="\img\analysis\3_3_0.png" alt="3.3.0" style="display: block; margin-left:auto;margin-right:auto; width: 500px;">
+                <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                    <tr>
+                        <th>Class</th>
+                        <th>Description</th>
+                    <tr>
+                    <tr>
+                        <td>Account</td>
+                        <td>The User account.</td>
+                    <tr>
+                    <tr>
+                        <td>Watchlist</td>
+                        <td>A customized list of stocks created by the User.</td>
+                    <tr>
+                    <tr>
+                        <td>Stock</td>
+                        <td>A company stock.</td>
+                    <tr>
+                    <tr>
+                        <td>Tweet</td>
+                        <td>A post on Twitter.</td>
+                    <tr>
+                </table>
             </div>
             
             <h3><span id="4.0.0">(4.0.0) Non-functional Attributes</span></h3>
-            <p>...</p>
+            <ul>
+                <li>A loading screen will be displayed between page transitions to enhance user experience.</li>
+            </ul>
 
             <h3><span id="Change-History">Change History</span></h3>
             <p>The StockEye Analysis is a living document, changing as the project progresses. While Google Docs is used to track the editing history, the StockEye Analysis includes references to major changes of the document within itself.</p>
@@ -131,7 +355,6 @@
                                 <li>Syed Ahmed</li>
                                 <li>Perikles Tsikrikis</li>
                                 <li>Michael Okenye</li>
-                                <li>Leron Bergelson</li>
                             </ul>
                         </td>
                     </tr>
@@ -145,7 +368,6 @@
                                 <li>Syed Ahmed</li>
                                 <li>Perikles Tsikrikis</li>
                                 <li>Michael Okenye</li>
-                                <li>Leron Bergelson</li>
                                 <li>Yasmine Ali</li>
                                 <li>Anshul Khatri</li>
                                 <li>Jeff Kolnick</li>
@@ -159,6 +381,7 @@
         <br>
         <div style="text-align: center">
             <a href="/" class="nav_button">Return to Menu</a>
+            <a href="#Top" class="nav_button">Return to Top</a>
         </div>
     </body>
 </html>
