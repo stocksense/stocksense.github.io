@@ -141,10 +141,10 @@
                     <img src="\img\design\package_diagram.png" alt="package_diagram" style="display: block; margin-left:auto;margin-right:auto; width: 400px;">
 
                     <h5><span id="2.1.2">(2.1.2) Subsystems</span></h4>
-                    <img src="\img\design\machine_learning_model.png" alt="machine_learning_model" style="display: block; margin-left:auto;margin-right:auto; width: 400px;">
+                    <img src="\img\design\machine_learning_model.png" alt="machine_learning_model" style="display: block; margin-left:auto;margin-right:auto; width: 350px;">
                     <img src="\img\design\tweetstream.png" alt="tweetstream" style="display: block; margin-left:auto;margin-right:auto; width: 500px;">
                     <h6 style="text-align: center;">TweetStream Package Layering & Encapsulation</h6>
-                    <img src="\img\design\tweetstream_layering.png" alt="tweetstream_layering" style="display: block; margin-left:auto;margin-right:auto; width: 300px;">
+                    <img src="\img\design\tweetstream_layering.png" alt="tweetstream_layering" style="display: block; margin-left:auto;margin-right:auto; width: 250px;">
                     <h6 style="text-align: center;">Database Schema</h6>
                     <img src="\img\design\database_schema.png" alt="database_schema" style="display: block; margin-left:auto;margin-right:auto; width: 500px;">
                     <table class="horizontal-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
@@ -163,7 +163,7 @@
                                 </ul>
                             </td>
                             <td>
-                                <ul style="list-style-type:none; padding-left: 0px;">
+                                <ul style="padding-left: 10px;">
                                     <li>UserLoginView</li>
                                     <li>AccountSettingsView</li>
                                     <li>RegistrationView</li>
@@ -183,7 +183,7 @@
                                 </ul>
                             </td>
                             <td>
-                                <ul style="list-style-type:none; padding-left: 0px;">
+                                <ul style="padding-left: 10px;">
                                     <li>WatchListView</li>
                                     <li>StockView</li>
                                     <li>FilterStockView</li>
@@ -206,7 +206,7 @@
                                 </ul>
                             </td>
                             <td>
-                                <ul style="list-style-type:none; padding-left: 0px;">
+                                <ul style="padding-left: 10px;">
                                     <li>Sentiment</li>
                                 </ul>
                             </td>
@@ -222,7 +222,7 @@
                                 </ul>
                             </td>
                             <td>
-                                <ul style="list-style-type:none; padding-left: 0px;">
+                                <ul style="padding-left: 10px;">
                                     <li>Status</li>
                                     <li>Tweet</li>
                                 </ul>
@@ -237,7 +237,7 @@
                                 </ul>
                             </td>
                             <td>
-                                <ul style="list-style-type:none; padding-left: 0px;">
+                                <ul style="padding-left: 10px;">
                                     <li>user</li>
                                     <li>stock</li>
                                     <li>watchlist</li>
@@ -330,13 +330,13 @@
                             <td>Input Text</td>
                             <td>A user’s username or email address.</td>
                         <tr>
-                        <tr>
+                        <tr style="white-space:nowrap;">
                             <td>User-password</td>
                             <td>Input Text</td>
                             <td>Password to the user’s account.</td>
                         <tr>
                         <tr>
-                            <td>Lost-password</td>
+                            <td style="white-space:nowrap;">Lost-password</td>
                             <td>Button</td>
                             <td>Directs user to a page where they can enter their email address. They are then sent a code which they can use to create a new password.</td>
                         <tr>                           
@@ -357,7 +357,7 @@
                         <tr>
                         <tr>
                             <td>User-password</td>
-                            <td>Input Password Text</td>
+                            <td style="white-space:nowrap;">Input Password Text</td>
                             <td>Password to the user’s account.</td>
                         <tr>
                         <tr>
@@ -371,7 +371,7 @@
                             <td>A user’s email address.</td>
                         <tr>
                         <tr>
-                            <td>Confirm-registration</td>
+                            <td style="white-space:nowrap;">Confirm-registration</td>
                             <td>Button</td>
                             <td>If registration is successful, new user object is created.</td>
                         <tr>
@@ -516,8 +516,40 @@
                             </table>
 
                             <h5><span id="3.1.9">(3.1.9) StockView</span></h4>
-                                <p style="text-align: center;"><a href="\img\design\gui\StockView.png" class="Thumb"><img src="\img\design\gui\StockView.png" alt="" /></a></p>
-                            
+                            <p style="text-align: center;"><a href="\img\design\gui\StockView.png" class="Thumb"><img src="\img\design\gui\StockView.png" alt="" /></a></p>
+                            <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                <tr>
+                                <tr>
+                                    <td>Stock-Name</td>
+                                    <td>Text</td>
+                                    <td>The name of the stock.</td>
+                                <tr>
+                                <tr>
+                                    <td>Stock-Sentiment</td>
+                                    <td>Text</td>
+                                    <td>Sentiment value of the stock.</td>
+                                <tr>
+                                <tr>
+                                    <td>Stock-Price</td>
+                                    <td>Text</td>
+                                    <td>Price of the stock.</td>
+                                <tr>
+                                <tr>
+                                    <td>Add-to-Watchlist</td>
+                                    <td>Button</td>
+                                    <td>Add stock to a selected Watchlist.</td>
+                                <tr>
+                                <tr>
+                                    <td>Select-Watchlist</td>
+                                    <td>Drop-down Menu</td>
+                                    <td>Displays list of existing Watchlists.</td>
+                                <tr>                          
+                            </table>
+                                
                             <h5><span id="3.1.10">(3.1.10) FilterStockView</span></h4>
                             <p style="text-align: center;"><a href="\img\design\gui\FilterStockView.png" class="Thumb"><img src="\img\design\gui\FilterStockView.png" alt="" /></a></p>
                             <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
@@ -528,17 +560,17 @@
                                 <tr>
                                 <tr>
                                     <td>Filter-by-Price</td>
-                                    <td>Button + Input text</td>
+                                    <td style="white-space:nowrap;">Button + Input text</td>
                                     <td>Filters stocks from minimum to maximum price.</td>
                                 <tr>
                                 <tr>
-                                    <td>Filter-by-Sentiment</td>
-                                    <td>Button + Input Text</td>
+                                    <td style="white-space:nowrap;">Filter-by-Sentiment</td>
+                                    <td style="white-space:nowrap;">Button + Input Text</td>
                                     <td>Filters stocks by sentiment type (positive, negative, neutral).</td>
                                 <tr>
                                 <tr>
-                                    <td>Filter-by-StockName</td>
-                                    <td>Button + Input Text</td>
+                                    <td style="white-space:nowrap;">Filter-by-StockName</td>
+                                    <td style="white-space:nowrap;">Button + Input Text</td>
                                     <td>Filters stocks by their name.</td>
                                 <tr>                        
                             </table>
