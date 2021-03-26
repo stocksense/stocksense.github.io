@@ -1,0 +1,67 @@
+.Thumb, .Thumb:hover {
+    cursor: url(zoomin.cur), pointer;
+    outline: 0 !important;
+}
+
+.Thumb-expanded-thumbnail {
+    cursor: default;
+}
+
+.Thumb span {
+display: none !important;
+}
+
+.Thumb img {
+	height: 150px;
+	border: 3px solid white;
+	box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+	margin: 10px 20px 20px 20px;
+}
+
+.Thumb-expanded {
+cursor: url(zoomout.cur), pointer;
+background: transparent;
+border: 1px solid #ccc;
+outline: 0;
+padding: 0;
+}
+
+.Thumb-caption {
+color: #333;
+font: normal 10pt Verdana, Helvetica;
+background: #ccc;
+text-align: left;
+padding: 8px;
+border: 0 !important;
+outline: 0 !important;
+}
+
+.Thumb-buttons {
+background: transparent url(buttons.png) no-repeat 0 0;
+height: 24px;
+display: block;
+}
+
+.Thumb-buttons a {
+width: 24px;
+height: 24px;
+margin: 0px 1px !important;
+overflow: hidden;
+}
+
+.Thumb-loader {
+font: normal 12pt sans-serif;
+border: 1px solid #000;
+background: #fff url(loader.gif) no-repeat 2px 50%;
+padding: 2px 2px 2px 22px;
+margin: 0;
+text-decoration: none;
+text-align: left;
+}
+
+.Thumb-swap {
+}
+
+.Thumb-external-caption {
+display: none;
+}

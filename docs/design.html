@@ -1,0 +1,665 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Style-Type" content="text/css">
+        <link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen" title="" charset="utf-8" />
+        <link href="/scripts/thumb/thumb.css" rel="stylesheet" type="text/css" media="screen" />
+        <script src="/scripts/thumb/thumb.js" type="text/javascript"></script>
+        <title>StockEye - Design</title>
+    </head>
+    <body style="background-color:white;">
+    <h1 style="text-align:center;">StockEye</h1>
+        <div class="generic-form" style="width: 600px; margin: 0 auto">
+            <h2 style="text-align:left;">Design</h2>
+            <div>
+                <p class="page-info">
+                    <span style="font-weight: bold;">Version:</span>
+                    <span class="values">1.0</span>
+                    <br>
+                    <span style="font-weight: bold;">Release Date:</span>
+                    <span class="values">March 26, 2021</span>
+                    <br>
+                    <span style="font-weight: bold;">Last Updated:</span>
+                    <span class="values">March 26, 2021</span>
+                    <br>
+                    <span style="font-weight: bold;">Authors:</span>
+                    <span class="values">Campbell Leckie, Yasmine Ali, Leron Bergelson, Brayden Mckay, Anshul Khatri</span>
+                    <br>
+                    <span style="font-weight: bold;">Editors:</span>
+                    <span class="values">Roy Ceyleon, Michael Okenye, Ruth Schmidt, Perikles Tsikrikis, Mohsin Malik, Syed Ahmed</span>
+                </p>
+            </div>
+
+           <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#1.0.0">Introduction</a></li>
+                <ul>
+                    <li><a href="#1.1.0">Purpose</a></li>
+                    <li><a href="#1.2.0">Scope</a></li>
+                    <li><a href="#1.3.0">Definitions</a></li>
+                    <li><a href="#1.4.0">References</a></li>
+                </ul>
+                <li><a href="#2.0.0">Decomposition Description</a>
+                <ul>
+                    <li><a href="#2.1.0">Software Architecture</a></li>
+                    <ul>
+                        <li><a href="#2.1.1">Package Diagram</a></li>
+                        <li><a href="#2.1.2">Subsystems</a></li>
+                    </ul>
+                    <li><a href="#2.2.0">Concurrent Process Decomposition</a></li>
+                </ul>
+                <li><a href="#3.0.0">Interface Description</a>
+                <ul>
+                    <li><a href="#3.1.0">Module Interface</a></li>
+                    <ul>
+                        <li><a href="#3.1.1">HomeView</a></li>
+                        <li><a href="#3.1.2">TrendingView</a></li>
+                        <li><a href="#3.1.3">UserLoginView</a></li>
+                        <li><a href="#3.1.4">RegistrationView</a></li>
+                        <li><a href="#3.1.5">AccountSettingsView</a></li>
+                        <li><a href="#3.1.6">WatchListView</a></li>
+                        <li><a href="#3.1.7">ManageWatchListView</a></li>
+                        <li><a href="#3.1.8">EditWatchListView</a></li>
+                        <li><a href="#3.1.9">StockView</a></li>
+                        <li><a href="#3.1.10">FilterStockView</a></li>
+                    </ul>
+                </ul>
+                <li><a href="#4.0.0">Detailed Design</a>
+                <ul>
+                    <li><a href="#4.1.0">Module Detailed Design</a></li>
+                    <li><a href="#4.2.0">Documentation</a></li>
+                    <ul>
+                        <li><a href="#4.2.1">Front End</a></li>
+                        <li><a href="#4.2.2">Back End</a></li>
+                    </ul>
+                </ul>  
+                <li><a href="#Change-History">Change History</a></li>
+            </ul>
+
+            <h3><span id="1.0.0">(1.0.0) Introduction</span></h3>
+            <p>This document is written following the guidelines of the IEEE Recommended Practice for Software Design Descriptions.</p>
+            <p>The following provides an overview of the StockEye Design.</p>
+            <div style="padding: 0px 10px;">
+                <h4><span id="1.1.0">(1.1.0) Purpose</span></h4>
+                <p>This document provides an in-depth description of the overall architecture and system design of the StockEye web application. It outlines the modules, processes, and data dependencies, as well as their detailed design and decomposition.</p>
+                <h4><span id="1.2.0">(1.2.0) Scope</span></h4>
+                <p>The goal of this document is to aid developers in the design process and implementation of the StockEye project in order to ensure accuracy and consistency during the development of the StockEye web application.</p>
+                <h4><span id="1.3.0">(1.3.0) Definitions</span></h4>
+                <table class="horizontal-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                    <tr>
+                        <th>Term</th>
+                        <th>Definition</th>
+                    <tr>
+                    <tr>
+                        <td>API</td>
+                        <td>Application Program Interface</td>
+                    </tr>
+                    <tr>
+                        <td>Concurrent Process</td>
+                        <td>Processes in the software that execute simultaneously and share common data and resources.</td>
+                    </tr>
+                    <tr>
+                        <td>JSON</td>
+                        <td>Javascript Object Notation</td>
+                    </tr>
+                    <tr>
+                        <td>Status Object</td>
+                        <td>JSON data returned by the Twitter Stream API encapsulated within a Tweepy object.</td>
+                    </tr>
+                    <tr>
+                        <td>User</td>
+                        <td>The person, or persons, who operate or interact directly with the application.</td>
+                    </tr>
+                    <tr>
+                        <td>View</td>
+                        <td>A visual element to display to the user; in this software it is normally in the form of a web page.</td>
+                    </tr>
+                </table>
+                <h4><span id="1.4.0">(1.4.0) References</span></h4>
+                <p>A complete list of all documents and other sources of information referenced.</p>
+                <ul>
+                    <li><a target="_blank" href="https://bohr.wlu.ca/cp317/notes/IEEE_830.pdf">IEEE Recommended Practice for Software Requirements Specifications (1998)</a></li>
+                    <li><a target="_blank" href="https://bohr.wlu.ca/cp317/notes/11_design.php">CP317 Notes: Design</a></li>
+                    <li><a target="_blank" href="https://stocksense.github.io/docs/requirements.html">StockEye Requirements</a></li>
+                    <li><a target="_blank" href="https://stocksense.github.io/docs/analysis.html">StockEye Analysis</a></li>
+                </ul>
+            </div>
+            
+            <h3><span id="2.0.0">(2.0.0) Decomposition Description</span></h3>
+            <p>This section describes the decomposition of the system in three different forms:</p>
+            <ul>
+                <li>Cohesive modules are formed by grouping data and functions, which are then displayed in their corresponding class and package diagrams.</li>
+                <li>Concurrent processes are extracted from the decomposition, and briefly outlined. In this case, as it is web-based, all served pages are considered concurrent processes.</li>
+                <li>The storage format of persistent data is identified.</li>
+            </ul>
+            <div style="padding: 0px 10px;">
+                <h4><span id="2.1.0">(2.1.0) Software Architecture</span></h4>
+                <div style="padding: 0px 10px;">
+                    <h5><span id="2.1.1">(2.1.1) Package Diagram</span></h4>
+                    <img src="\img\design\package_diagram.png" alt="package_diagram" style="display: block; margin-left:auto;margin-right:auto; width: 400px;">
+
+                    <h5><span id="2.1.2">(2.1.2) Subsystems</span></h4>
+                    <img src="\img\design\machine_learning_model.png" alt="machine_learning_model" style="display: block; margin-left:auto;margin-right:auto; width: 400px;">
+                    <img src="\img\design\tweetstream.png" alt="tweetstream" style="display: block; margin-left:auto;margin-right:auto; width: 500px;">
+                    <h6 style="text-align: center;">TweetStream Package Layering & Encapsulation</h6>
+                    <img src="\img\design\tweetstream_layering.png" alt="tweetstream_layering" style="display: block; margin-left:auto;margin-right:auto; width: 300px;">
+                    <h6 style="text-align: center;">Database Schema</h6>
+                    <img src="\img\design\database_schema.png" alt="database_schema" style="display: block; margin-left:auto;margin-right:auto; width: 500px;">
+                    <table class="horizontal-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                        <tr>
+                            <th>Package</th>
+                            <th>Responsibilities</th>
+                            <th>Associated Entities</th>
+                        </tr>
+                        <tr>
+                            <td>User</td>
+                            <td>
+                                <ul style="padding-left: 10px;">
+                                    <li>Creates user objects that contain a user’s profile information (name, password, etc.) and stores them in the database</li>
+                                    <li>Performs user authentication</li>
+                                    <li>UserController allows each user to perform actions on the StockWatch package</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul style="list-style-type:none; padding-left: 0px;">
+                                    <li>UserLoginView</li>
+                                    <li>AccountSettingsView</li>
+                                    <li>RegistrationView</li>
+                                    <li>UserController</li>
+                                    <li>AccountSettingsController</li>
+                                    <li>RegistrationController</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>StockWatch</td>
+                            <td>
+                                <ul style="padding-left: 10px;">
+                                    <li>Creates stock objects with attributes sentiment, price and name, stores them in the database, and displays them for the user using StockView. Additionally, the user can filter the stocks shown with the attributes listed above.</li>
+                                    <li>Sentiment attribute on stock object is retrieved from machine learning package.</li>
+                                    <li>Provides each user with an interface to view stocks, add them to watchlists, and perform actions on them (adding, deleting, or editing stocks).</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul style="list-style-type:none; padding-left: 0px;">
+                                    <li>WatchListView</li>
+                                    <li>StockView</li>
+                                    <li>FilterStockView</li>
+                                    <li>FilterStockController</li>
+                                    <li>WatchlistController</li>
+                                    <li>StockController</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Machine Learning Model</td>
+                            <td>
+                                <ul style="padding-left: 10px;">
+                                    <li>Scan Tweet text for stock ticker.</li>
+                                    <li>Tokenize tweet text.</li>
+                                    <li>Normalize words.</li>
+                                    <li>Denoise data.</li>
+                                    <li>Determine sentiment from cleaned and tokenized data.</li>
+                                    <li>Construct Sentiment_Update object</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul style="list-style-type:none; padding-left: 0px;">
+                                    <li>Sentiment</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>TweetStream</td>
+                            <td>
+                                <ul style="padding-left: 10px;">
+                                    <li>Initialize connection to the Twitter Stream API and request JSON objects that match a stocks content filter.</li>
+                                    <li>Observe the Twitter Stream API through Tweepy StreamListener.</li>
+                                    <li>Construct Tweet objects from attributes within Tweepy Status object.</li>
+                                    <li>Pass Tweet objects into the Machine Learning Model Package.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul style="list-style-type:none; padding-left: 0px;">
+                                    <li>Status</li>
+                                    <li>Tweet</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Database</td>
+                            <td>
+                                <ul style="padding-left: 10px;">
+                                    <li>Storing concurrent information in the SQLite database.</li>
+                                    <li>Proving an interface for querying, modifying and deleting entries in the database.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul style="list-style-type:none; padding-left: 0px;">
+                                    <li>user</li>
+                                    <li>stock</li>
+                                    <li>watchlist</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h4><span id="2.2.0">(2.2.0) Concurrent Process Decomposition</span></h4>
+                <div style="padding: 0px 10px;">
+                    <h5>StreamListener</h5>
+                    <p>Concurrent process to handle Status objects pushed through the Twitter Stream API. Forwards newly created Tweet objects to the Machine Learning Model for evaluation, ensuring up to date sentiment values within the database.</p>
+                    <h5>Interfaces</h5>
+                    <table class="horizontal-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                        <tr>
+                            <th>Interface</th>
+                            <th>Identification</th>
+                            <th>Purpose</th>
+                        </tr>
+                        <tr>
+                            <td>Home View</td>
+                            <td>HomeView</td>
+                            <td>An interface that greets, and informs the user about StockEye’s functionality.</td>
+                        </tr>
+                        <tr>
+                            <td>Login View</td>
+                            <td>UserLoginView</td>
+                            <td>An interface for the user to enter username or email address and password for login. Additionally, a check box a remember me checkbox with a forgot your password link.</td>
+                        </tr>
+                        <tr>
+                            <td>Account Registration View</td>
+                            <td>RegistrationView</td>
+                            <td>To let the user register for an account with a username, password, email and phone number (optional). A confirm Registration button to confirm the registration. Additionally, a login button is presented if an account already exists.</td>
+                        </tr>
+                        <tr>
+                            <td>Profile View</td>
+                            <td>AccountSettingsView</td>
+                            <td>Allows the user to change their user information on their account, such as the email and password they wish to have linked to their account.</td>
+                        </tr>
+                    </table>
+                    
+                </div>
+            </div>
+
+            <h3><span id="3.0.0">(3.0.0) Interface Description</span></h3>
+            <p>This section provides prototypes and details for the StockEye interface.</p>
+            <div style="padding: 0px 10px;">
+                <h4><span id="3.1.0">(3.1.0) Module Interface</span></h4>
+                
+                <div style="padding: 0px 10px;">
+                    <h5><span id="3.1.1">(3.1.1) HomeView</span></h5>
+                    <p style="text-align: center;"><a href="\img\design\gui\HomeView.png" class="Thumb"><img src="\img\design\gui\HomeView.png" alt="" /></a></p>
+                    <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        <tr>
+                        <tr>
+                            <td>Log-in Button</td>
+                            <td>Input Button</td>
+                            <td>Triggers drop-down log-in form.</td>
+                        <tr>
+                        <tr>
+                            <td>Register Button</td>
+                            <td>Input Button</td>
+                            <td>Directs user to Account Registration page.</td>
+                        <tr>
+                        <tr>
+                            <td>Trending Link</td>
+                            <td>Input Button</td>
+                            <td>Directs user to Trending page.</td>
+                        <tr>                           
+                    </table>
+
+                    <h5><span id="3.1.2">(3.1.2) TrendingView</span></h5>
+                    <p style="text-align: center;"><a href="\img\design\gui\TrendingView.png" class="Thumb"><img src="\img\design\gui\TrendingView.png" alt="" /></a></p>
+
+
+                    <h5><span id="3.1.3">(3.1.3) UserLoginView</span></h4>
+                    <p style="text-align: center;"><a href="\img\design\gui\UserLoginView.png" class="Thumb"><img src="\img\design\gui\UserLoginView.png" alt="" /></a></p>
+                    <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        <tr>
+                        <tr>
+                            <td>User-name</td>
+                            <td>Input Text</td>
+                            <td>A user’s username or email address.</td>
+                        <tr>
+                        <tr>
+                            <td>User-password</td>
+                            <td>Input Text</td>
+                            <td>Password to the user’s account.</td>
+                        <tr>
+                        <tr>
+                            <td>Lost-password</td>
+                            <td>Input Button</td>
+                            <td>Directs user to a page where they can enter their email address. They are then sent a code which they can use to create a new password.</td>
+                        <tr>                           
+                    </table>
+
+                    <h5><span id="3.1.4">(3.1.4) RegistrationView</span></h4>
+                    <p style="text-align: center;"><a href="\img\design\gui\RegistrationView.png" class="Thumb"><img src="\img\design\gui\RegistrationView.png" alt="" /></a></p>
+                    <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        <tr>
+                        <tr>
+                            <td>User-name</td>
+                            <td>Input Text</td>
+                            <td>A user’s username or email address.</td>
+                        <tr>
+                        <tr>
+                            <td>User-password</td>
+                            <td>Input Password</td>
+                            <td>Password to the user’s account.</td>
+                        <tr>
+                        <tr>
+                            <td>Confirm-password</td>
+                            <td>Input Password</td>
+                            <td>Password entered must be the same as User-password for registration to be successful.</td>
+                        <tr>            
+                        <tr>
+                            <td>User-email</td>
+                            <td>Input Text</td>
+                            <td>A user’s email address.</td>
+                        <tr>
+                        <tr>
+                            <td>Confirm-registration</td>
+                            <td>Input Submit</td>
+                            <td>If registration is successful, new user object is created.</td>
+                        <tr>
+                        <tr>
+                            <td>Log-in-button</td>
+                            <td>Input Button</td>
+                            <td>Directs user to UserLoginView.</td>
+                        <tr>                               
+                    </table>
+                 
+                    <h5><span id="3.1.5">(3.1.5) AccountSettingsView</span></h4>
+                    <p style="text-align: center;"><a href="\img\design\gui\AccountSettingsView.png" class="Thumb"><img src="\img\design\gui\AccountSettingsView.png" alt="" /></a></p>
+                    <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                            <th>Description</th>
+                        <tr>
+                        <tr>
+                            <td>User-Email</td>
+                            <td>Input Text</td>
+                            <td>A user’s new email.</td>
+                        <tr>
+                        <tr>
+                            <td>User-Password</td>
+                            <td>Input Text</td>
+                            <td>A user’s new password.</td>
+                        <tr>
+                        <tr>
+                            <td>Change-Email</td>
+                            <td>Input Button</td>
+                            <td>Updates user email.</td>
+                        <tr>
+                        <tr>
+                            <td>Change-Password</td>
+                            <td>Input Button</td>
+                            <td>Updates user password.</td>
+                        <tr>                          
+                    </table>
+
+                    <h5><span id="3.1.6">(3.1.6) WatchListView</span></h4>
+                    <p>...</p>
+                    
+                    <h5><span id="3.1.7">(3.1.7) ManageWatchListView</span></h4>
+                        <p style="text-align: center;"><a href="\img\design\gui\ManageWatchlistView.png" class="Thumb"><img src="\img\design\gui\ManageWatchlistView.png" alt="" /></a></p>
+                        <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                            <tr>
+                                <th>Field</th>
+                                <th>Type</th>
+                                <th>Description</th>
+                            <tr>
+                            <tr>
+                                <td>Create-Watchlist</td>
+                                <td>Input Button</td>
+                                <td>Creates a new watchlist.</td>
+                            <tr>
+                            <tr>
+                                <td>Delete-Watchlist</td>
+                                <td>Input Button</td>
+                                <td>Deletes delected watchlist.</td>
+                            <tr>
+                            <tr>
+                                <td>Select-Watchlist</td>
+                                <td>Toggle Box</td>
+                                <td>Selects the watchlist being clicked on.</td>
+                            <tr>
+                            <tr>
+                                <td>Watchlist-Name</td>
+                                <td>Text Field</td>
+                                <td>Displays name of the watchlist.</td>
+                            <tr>                          
+                        </table>
+
+                        <h5><span id="3.1.8">(3.1.8) EditWatchListView</span></h4>
+                            <p style="text-align: center;"><a href="\img\design\gui\EditWatchlistView.png" class="Thumb"><img src="\img\design\gui\EditWatchlistView.png" alt="" /></a></p>
+                            <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                <tr>
+                                <tr>
+                                    <td>Edit-Watchlist</td>
+                                    <td>Input Button</td>
+                                    <td>Directs users to the manage watchlist page.</td>
+                                <tr>
+                                <tr>
+                                    <td>Cancel-Watchlist</td>
+                                    <td>Input Button</td>
+                                    <td>Cancels any changes made to the watchlist.</td>
+                                <tr>
+                                <tr>
+                                    <td>Save-Watchlist</td>
+                                    <td>Input Button</td>
+                                    <td>Changes made to the watchlist are saved.</td>
+                                <tr>
+                                <tr>
+                                    <td>Select-Stock</td>
+                                    <td>Toggle Box</td>
+                                    <td>Selects the stock being clicked on.</td>
+                                <tr>
+                                <tr>
+                                    <td>SelectAll</td>
+                                    <td>Input Button</td>
+                                    <td>Selects all the stocks on the watchlist.</td>
+                                <tr>     
+                                <tr>
+                                    <td>DeleteSelected</td>
+                                    <td>Input Button</td>
+                                    <td>Deletes the stock(s) that are selected.</td>
+                                <tr> 
+                                <tr>
+                                    <td>AddSymbol</td>
+                                    <td>Input Button</td>
+                                    <td>Add a new stock.</td>
+                                <tr>
+                                <tr>
+                                    <td>Change-Watchlist</td>
+                                    <td>Drop-down Menu</td>
+                                    <td>Showing available watchlists for users to move to.</td>
+                                <tr> 
+                                <tr>
+                                    <td>Stock-Price</td>
+                                    <td>Text Field</td>
+                                    <td>Displays the current price of the stock.</td>
+                                <tr>   
+                                <tr>
+                                    <td>Stock-Change</td>
+                                    <td>Text Field</td>
+                                    <td>Displays the percentage the stock price has changed.</td>
+                                <tr>   
+                                <tr>
+                                    <td>Stock-Symbol</td>
+                                    <td>Text Field</td>
+                                    <td>Displays the symbol of the stock.</td>
+                                <tr>
+                                <tr>
+                                    <td>Stock-Description</td>
+                                    <td>Text Field</td>
+                                    <td>Displays the name of the stock.</td>
+                                <tr>                  
+                            </table>
+
+                            <h5><span id="3.1.9">(3.1.9) StockView</span></h4>
+                                <p style="text-align: center;"><a href="\img\design\gui\StockView.png" class="Thumb"><img src="\img\design\gui\StockView.png" alt="" /></a></p>
+                            
+                            <h5><span id="3.1.10">(3.1.10) FilterStockView</span></h4>
+                            <p style="text-align: center;"><a href="\img\design\gui\FilterStockView.png" class="Thumb"><img src="\img\design\gui\FilterStockView.png" alt="" /></a></p>
+                            <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                <tr>
+                                <tr>
+                                    <td>Filter-by-Price</td>
+                                    <td>Input Button + Input Search</td>
+                                    <td>Filters stocks from minimum to maximum price.</td>
+                                <tr>
+                                <tr>
+                                    <td>Filter-by-Sentiment</td>
+                                    <td>Input Button + Input Search</td>
+                                    <td>Filters stocks by sentiment type (positive, negative, neutral).</td>
+                                <tr>
+                                <tr>
+                                    <td>Filter-by-StockName</td>
+                                    <td>Input Button + Input Search</td>
+                                    <td>Filters stocks by their name.</td>
+                                <tr>                        
+                            </table>
+
+                </div>
+            </div>
+            
+            <h3><span id="4.0.0">(4.0.0) Detailed Design</span></h3>
+            <div style="padding: 0px 10px;">
+                <h4><span id="4.1.0">(4.1.0) Module Detailed Design</span></h4>
+                <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                    <tr>
+                        <th>Function</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td>setUsername()</td>
+                        <td>
+                            <ul style="list-style-type:none; padding-left: 0px;">
+                                <li>Stores user created string as a username in the user database.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>setPassword()</td>
+                        <td>
+                            <ul style="list-style-type:none; padding-left: 0px;">
+                                <li>Stores user created string as a password in the user database.</li>
+                                <li>Links password to the unique email address.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>confirmPassword()</td>
+                        <td>
+                            <ul style="list-style-type:none; padding-left: 0px;">
+                                <li>Confirms re-entered password matches first password.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>setEmail()</td>
+                        <td>
+                            <ul style="list-style-type:none; padding-left: 0px;">
+                                <li>System checks if email already exists.</li>
+                                <li>If not, the system stores the user created string as an email address in the database and links it to the new username and profile.</li>
+                                <li>If it does already exist, user will be notified that changes to email address must be made to continue.</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>addSymbol()</td>
+                        <td>
+                            <ul style="list-style-type:none; padding-left: 0px;">
+                                <li>Creates a new entry in the database watchlist table relating a user,  watchlist, and stock.</li>
+                            </ul>
+                        </td>
+                    </tr>                           
+                </table>
+
+                <h4><span id="4.2.0">(4.2.0) Documentation</span></h4>
+                <div style="padding: 0px 10px;">
+                    <h5><span id="4.2.1">(4.2.1) Front End</span></h5>
+                    <p><b>Languages</b>: HTML, CSS, Javascript</p>
+                    <p><b>Illustrations</b>: Undraw.co</p>
+                    <p><b>Iconography</b>: Iconify (Figma extension)</p>
+                    <p><b>Visual Framework</b>: ReactJS</p>
+
+                    <h5><span id="4.2.2">(4.2.2) Back End</span></h5>
+                    <p><b>Languages</b>: Python</p>
+                    <p><b>Hosting</b>: Heroku</p>
+                    <p><b>Web Application Framework</b>: Django</p>
+                    <p><b>Web Application Libraries</b>: Tweepy, NLTK (Natural Language Toolkit)</p>
+                    <p><b>Database</b>: SQLite</p>
+                </div>
+            </div>
+
+            <h3><span id="Change-History">Change History</span></h3>
+            <p>The StockEye Design is a living document, changing as the project progresses. While Google Docs is used to track the editing history, the StockEye Design includes references to major changes of the document within itself.</p>
+            <table class="vertical-table" style="font-size:80%; margin-left:auto; margin-right:auto;">
+                    <tr>
+                        <th>Date</th>
+                        <th>Description of Change(s)</th>
+                        <th>Contributor(s)</th>
+                    <tr>
+                    <tr>
+                        <td>March 24, 2021</td>
+                        <td>Initial draft of Design completed</td>
+                        <td>
+                            <ul style="list-style-type:none; padding-left: 0px;">
+                                <li>Cambell Leckie</li>
+                                <li>Yasmin Ali</li>
+                                <li>Leron Bergelson</li>
+                                <li>Brayden Mckay</li>
+                                <li>Anshul Khatri</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>March 25, 2021</td>
+                        <td>Final draft of Design completed</td>
+                        <td>
+                            <ul style="list-style-type:none; padding-left: 0px;">
+                                <li>Cambell Leckie</li>
+                                <li>Yasmin Ali</li>
+                                <li>Leron Bergelson</li>
+                                <li>Brayden Mckay</li>
+                                <li>Anshul Khatri</li>
+                                <li>Syed Ahmed</li>
+                                <li>Perikles Tsikrikis</li>
+                                <li>Michael Okenye</li>
+                                <li>Ruth Schmidt</li>
+                                <li>Roy Ceyleon</li>
+                            </ul>
+                        </td>
+                    </tr>
+            </table>
+        </div>
+        <br>
+        <div style="text-align: center">
+            <a href="/" class="nav_button">Return to Menu</a>
+            <a href="#Top" class="nav_button">Return to Top</a>
+    </body>
+</html>
