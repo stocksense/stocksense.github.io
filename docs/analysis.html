@@ -32,19 +32,19 @@
 
            <h3>Table of Contents</h3>
             <ul style="list-style-type:none; padding-left: 10px;">
-                <li><a href="#1.0.0">(1.0) Introduction</a></li>
+                <li><a href="#1.0.0">(1) Introduction</a></li>
                 <ul style="list-style-type:none;">
                     <li><a href="#1.1.0">(1.1) Project Summary</a></li>
                     <li><a href="#1.2.0">(1.2) Purpose</a></li>
                     <li><a href="#1.3.0">(1.3) References</a></li>
                 </ul>
-                <li><a href="#2.0.0">(2.0) Object Classification</a>
+                <li><a href="#2.0.0">(2) Object Classification</a>
                 <ul style="list-style-type:none;">
                     <li><a href="#2.1.0">(2.1) Entity Objects</a></li>
                     <li><a href="#2.2.0">(2.2) Boundary Objects</a></li>
                     <li><a href="#2.3.0">(2.3) Control Objects</a></li>
                 </ul>
-                <li><a href="#3.0.0">(3.0) Diagrams</a>
+                <li><a href="#3.0.0">(3) Diagrams</a>
                 <ul style="list-style-type:none;">
                     <li><a href="#3.1.0">(3.1) Boundary/Control/Entity Diagram</a></li>
                     <li><a href="#3.2.0">(3.2) State Diagrams</a></li>
@@ -58,18 +58,18 @@
                     </ul>
                     <li><a href="#3.3.0">(3.3) Class Diagram</a></li>
                 </ul>
-                <li><a href="#4.0.0">(4.0) Non-functional Attributes</a>
-                <li><a href="#Change-History">(5.0) Change History</a></li>
+                <li><a href="#4.0.0">(4) Non-functional Attributes</a>
+                <li><a href="#Change-History">(5) Change History</a></li>
             </ul>
 
-            <h3><span id="1.0.0">(1.0.0) Introduction</span></h3>
+            <h3><span id="1.0.0">(1) Introduction</span></h3>
             <p>The following provides an overview of the StockEye Analysis.</p>
             <div style="padding: 0px 10px;">
-                <h4><span id="1.1.0">(1.1.0) Project Summary</span></h4>
+                <h4><span id="1.1.0">(1.1) Project Summary</span></h4>
                 <p>StockEye is a web application that aggregates and analyses tweets related to the stock market from the popular social media platform Twitter, and offers information regarding the public sentiments of stocks and volume metrics to its users. StockEye seeks to serve its audience in multiple ways. For one, Twitter is a valuable source of data, as it currently acts as a hub for global public opinion. Due to the impact that public opinion has on the market, the analysis of Twitter data presented by StockEye enables its users to make more informed investment decisions. Additionally, StockEye will save users time, as they will no longer be required to research and analyse the Twitter sentiments themselves.</p>
-                <h4><span id="1.2.0">(1.2.0) Purpose</span></h4>
+                <h4><span id="1.2.0">(1.2) Purpose</span></h4>
                 <p>This document will cover the analysis for StockEye and describe all of its features and functionalities in detail and provide diagrams to aid comprehension. This will set the foundation upon which important design refinements will be made.</p>
-                <h4><span id="1.3.0">(1.3.0) References</span></h4>
+                <h4><span id="1.3.0">(1.3) References</span></h4>
                 <p>A complete list of all documents and other sources of information referenced.</p>
                 <ul>
                     <li><a target="_blank" href="https://bohr.wlu.ca/cp317/notes/IEEE_830.pdf">IEEE Recommended Practice for Software Requirements Specifications (1998)</a></li>
@@ -78,10 +78,10 @@
                 </ul>
             </div>
             
-            <h3><span id="2.0.0">(2.0.0) Object Classification</span></h3>
+            <h3><span id="2.0.0">(2) Object Classification</span></h3>
             <p>This section describes all the entity, boundary, and control objects comprising the StockEye application.</p>
             <div style="padding: 0px 50px;">
-                <h4><span id="2.1.0">(2.1.0) Entity Objects</span></h4>
+                <h4><span id="2.1.0">(2.1) Entity Objects</span></h4>
                 <table class="horizontal-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
                     <tr>
                         <th>Entity</th>
@@ -104,7 +104,7 @@
                         <td>The StockEye Database, which stores all data utilized.</td>
                     </tr>
                 </table>
-                <h4><span id="2.2.0">(2.2.0) Boundary Objects</span></h4>
+                <h4><span id="2.2.0">(2.2) Boundary Objects</span></h4>
                 <table class="horizontal-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
                     <tr>
                         <th>Boundary</th>
@@ -140,7 +140,7 @@
                     </tr>
                 </table>
 
-                <h4><span id="2.3.0">(2.3.0) Control Objects</span></h4>
+                <h4><span id="2.3.0">(2.3) Control Objects</span></h4>
                 <table class="horizontal-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
                     <tr>
                         <th>Control</th>
@@ -173,12 +173,12 @@
                 </table>
             </div>
 
-            <h3><span id="3.0.0">(3.0.0) Diagrams</span></h3>
+            <h3><span id="3.0.0">(3) Diagrams</span></h3>
             <p>This section provides details and diagrams exhibiting the interactions between the various objects in StockEye.</p>
             <div style="padding: 0px 10px;">
-                <h4><span id="3.1.0">(3.1.0) Boundary/Control/Entity Diagram</span></h4>
+                <h4><span id="3.1.0">(3.1) Boundary/Control/Entity Diagram</span></h4>
                 <img src="\img\analysis\3_1_0.png" alt="3.1.0" style="display: block; margin-left:auto;margin-right:auto; width: 600px;">
-                <h4><span id="3.2.0">(3.2.0) State Diagrams</span></h4>
+                <h4><span id="3.2.0">(3.2) State Diagrams</span></h4>
                 <p>This subsection provides details and diagrams exhibiting the control objects in StockEye at a deeper level.</p>
                 <div style="padding: 0px 10px;">
                         <h4><span id="3.2.1">(3.2.1) Account Settings Controller Class</span></h4>
@@ -306,7 +306,7 @@
                             <tr>
                         </table>
                 </div>
-                <h4><span id="3.3.0">(3.3.0) Class Diagram</span></h4>
+                <h4><span id="3.3.0">(3.3) Class Diagram</span></h4>
                 <img src="\img\analysis\3_3_0.png" alt="3.3.0" style="display: block; margin-left:auto;margin-right:auto; width: 500px;">
                 <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
                     <tr>
@@ -332,12 +332,12 @@
                 </table>
             </div>
             
-            <h3><span id="4.0.0">(4.0.0) Non-functional Attributes</span></h3>
+            <h3><span id="4.0.0">(4) Non-functional Attributes</span></h3>
             <ul>
                 <li>A loading screen will be displayed between page transitions to enhance user experience.</li>
             </ul>
 
-            <h3><span id="Change-History">(5.0.0) Change History</span></h3>
+            <h3><span id="Change-History">(5) Change History</span></h3>
             <p>The StockEye Analysis is a living document, changing as the project progresses. While Google Docs is used to track the editing history, the StockEye Analysis includes references to major changes of the document within itself.</p>
             <table class="vertical-table" style="font-size:80%; margin-left:auto; margin-right:auto;">
                     <tr>

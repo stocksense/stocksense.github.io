@@ -32,7 +32,7 @@
 
             <h3>Table of Contents</h3>
             <ul style="list-style-type:none; padding-left: 10px;">
-                <li><a href="#1.0.0">(1.0) Introduction</a></li>
+                <li><a href="#1.0.0">(1) Introduction</a></li>
                 <ul style="list-style-type:none;">
                     <li><a href="#1.1.0">(1.1) Project Summary</a></li>
                     <li><a href="#1.2.0">(1.2) Purpose</a></li>
@@ -41,7 +41,7 @@
                     <li><a href="#1.5.0">(1.5) References</a></li>
                     <li><a href="#1.6.0">(1.6) Overview</a></li>
                 </ul>
-                <li><a href="#2.0.0">(2.0) Overall Description</a>
+                <li><a href="#2.0.0">(2) Overall Description</a>
                 <ul style="list-style-type:none;">
                     <li><a href="#2.1.0">(2.1) Product Perspective</a></li>
                     <li><a href="#2.2.0">(2.2) Product Functions</a></li>
@@ -50,7 +50,7 @@
                     <li><a href="#2.5.0">(2.5) Assumptions and Dependencies</a></li>
                 </ul>
 
-                <li><a href="#3.0.0">(3.0) Specific Requirements</a>
+                <li><a href="#3.0.0">(3) Specific Requirements</a>
                 <ul style="list-style-type:none;">
                     <li><a href="#3.1.0">(3.1) External Interfaces</a></li>
                     <li><a href="#3.2.0">(3.2) Functions</a></li>
@@ -65,19 +65,19 @@
                     <li><a href="#3.6.0">(3.6) Actors and Use Cases</a></li>
                 </ul>
 
-                <li><a href="#Change-History">(4.0) Change History</a></li>
+                <li><a href="#Change-History">(4) Change History</a></li>
             </ul>
 
-            <h3><span id="1.0.0">(1.0.0) Introduction</span></h3>
+            <h3><span id="1.0.0">(1) Introduction</span></h3>
             <p>The following provides an overview of the StockEye SRS.</p>
             <div style="padding: 0px 10px;">
-                <h4><span id="1.1.0">(1.1.0) Project Summary</span></h4>
+                <h4><span id="1.1.0">(1.1) Project Summary</span></h4>
                 <p>StockEye is a web application that aggregates and analyses tweets related to the stock market from the popular social media platform Twitter, and offers information regarding the public sentiments of stocks and volume metrics to its users. StockEye seeks to serve its audience in multiple ways. For one, Twitter is a valuable source of data, as it currently acts as a hub for global public opinion. Due to the impact that public opinion has on the market, the analysis of Twitter data presented by StockEye enables its users to make more informed investment decisions. Additionally, StockEye will save users time, as they will no longer be required to research and analyse the Twitter sentiments themselves.</p>
-                <h4><span id="1.2.0">(1.2.0) Purpose</span></h4>
+                <h4><span id="1.2.0">(1.2) Purpose</span></h4>
                 <p>This document covers all the software requirements and features for the StockEye application, and is primarily intended for the client (David Brown), the project team, and other interested parties, both present and future. It will ensure that all necessary components are included and serve as a basis for the project.</p>
-                <h4><span id="1.3.0">(1.3.0) Scope</span></h4>
+                <h4><span id="1.3.0">(1.3) Scope</span></h4>
                 <p>This project will produce the web application StockEye. This product will assess the intent of tweets as well as tweet volume regarding stocks chosen by its users and compile and present them in an easily comprehensible format. It will thus give an immediate overview of  their Watchlist and allow for quick decision making as the market may dictate without having to scour Twitter for the relevant information.</p>
-                <h4><span id="1.4.0">(1.4.0) Definitions & Abbreviations</span></h4>
+                <h4><span id="1.4.0">(1.4) Definitions & Abbreviations</span></h4>
                 <table class="horizontal-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
                     <tr>
                         <th>Term</th>
@@ -136,7 +136,7 @@
                         <td>A member of the Quality Assurance team for a specific deliverable.</td>
                     </tr>                                                                                                                                                               
                 </table>
-                <h4><span id="1.5.0">(1.5.0) References</span></h4>
+                <h4><span id="1.5.0">(1.5) References</span></h4>
                 <p>A complete list of all documents and other sources of information referenced.</p>
                 <ul>
                     <li><a target="_blank" href="https://bohr.wlu.ca/cp317/notes/IEEE_830.pdf">IEEE Recommended Practice for Software Requirements Specifications (1998)</a></li>
@@ -144,16 +144,16 @@
                     <li><a target="_blank" href="https://bohr.wlu.ca/cp317/notes/06_requirements.php">CP317 Notes: Requirements</a></li>
                     <li><a target="_blank" href="https://www.csc2.ncsu.edu/faculty/healey/tweet_viz/#:~:text=Sentiment%20is%20defined%20as%20%22an,the%20confidence%20in%20our%20estimates.&text=As%20of%20March%202011%2C%20Twitter,200%20million%20tweets%20per%20day.">Twitter Sentiment Visualization</a></li>
                 </ul>
-                <h4><span id="1.6.0">(1.6.0) Overview</span></h4>
+                <h4><span id="1.6.0">(1.6) Overview</span></h4>
                 <p>This document contains all functional requirements for the StockEye web application. It details how the product will operate, its limitations and projected user base. It first establishes the context in which StockEye is being formulated and subsequently identifies the essential features for it to be a success.</p>
             </div>
 
-            <h3><span id="2.0.0">(2.0.0) Overall Description</span></h3>
+            <h3><span id="2.0.0">(2) Overall Description</span></h3>
             <p>The following provides insight into the StockEye product perspective, its functions, the characteristics of the user base, constraints associated with development, along with assumptions and dependencies which provide information about application compatibility.</p>
             <div style="padding: 0px 10px;">
-                <h4><span id="2.1.0">(2.1.0) Product Perspective</span></h4>
+                <h4><span id="2.1.0">(2.1) Product Perspective</span></h4>
                 <p>StockEye builds directly off of Twitter, utilizing the Tweepy API. Through this it will be able to import tweets and assemble it into data to help inform its users of potential rises and falls in the stocks they are most interested in.</p>
-                <h4><span id="2.2.0">(2.2.0) Product Functions</span></h4>
+                <h4><span id="2.2.0">(2.2) Product Functions</span></h4>
                 <ul>
                     <li>Interpret tweets.</li>
                     <li>Aggregate sentiment data - tracks rise and fall of a particular stock.</li>
@@ -161,21 +161,21 @@
                     <li>Allow user choice of interested stocks.</li>
                     <li>Easy-to-follow organizational structure.</li>
                 </ul>
-                <h4><span id="2.3.0">(2.3.0) User Characteristics</span></h4>
+                <h4><span id="2.3.0">(2.3) User Characteristics</span></h4>
                 <ul>
                     <li>Shareholder (current or potential)</li>
                     <li>Savvy (tech and financial)</li>
                     <li>Financial interest</li>
                     <li>Familiarity with social media</li>
                 </ul>
-                <h4><span id="2.4.0">(2.4.0) Constraints</span></h4>
+                <h4><span id="2.4.0">(2.4) Constraints</span></h4>
                 <ul>
                     <li>Time - to be completed no later than April 12, 2021.</li>
                     <li>Tools limited to that which are freely available.</li>
                     <li>Inexperience and unfamiliarity with the prerequisite technologies demanded by the objectives of the application.</li>
                     <li>Limited communication capability due to COVID-19 pandemic restrictions.</li>
                 </ul>
-                <h4><span id="2.5.0">(2.5.0) Assumptions and Dependencies</span></h4>
+                <h4><span id="2.5.0">(2.5) Assumptions and Dependencies</span></h4>
                 <ul>
                     <li>Deliverables will be completed by several team members; this includes writers and testers.</li>
                     <li>Deliverables will be reviewed by the entire team, following approval by the quality assurance team assigned to the respective deliverable.</li>
@@ -184,10 +184,10 @@
                 </ul>
             </div>
 
-            <h3><span id="3.0.0">(3.0.0) Specific Requirements</span></h3>
+            <h3><span id="3.0.0">(3) Specific Requirements</span></h3>
             <p>The following contains all of the software requirements, along with pertinent and sufficient details to enable the design, implementation, and assessment of the StockEye application.</p>
             <div style="padding: 0px 10px;">
-                <h4><span id="3.1.0">(3.1.0) External Interfaces</span></h4>
+                <h4><span id="3.1.0">(3) External Interfaces</span></h4>
                 <ul>
                     <li>HTTP web browser</li>
                     <li>Login/Registration page</li>
@@ -203,13 +203,13 @@
                         <li>Current and over time</li>
                     </ul>
                 </ul>
-                <h4><span id="3.2.0">(3.2.0) Functions</span></h4>
+                <h4><span id="3.2.0">(3.2) Functions</span></h4>
                 <ul>
                     <li>Interpret tweet sentiment.</li>
                     <li>Track selected tweet sentiments over time.</li>
                     <li>Track selected tweet volume over time.</li>
                 </ul>
-                <h4><span id="3.3.0">(3.3.0) Database</span></h4>
+                <h4><span id="3.3.0">(3.3) Database</span></h4>
                 <ul>
                     <li>Stock names</li>
                     <li>Stock values</li>
@@ -218,7 +218,7 @@
                     <li>User Watchlist</li>
                     <li>User account information and settings</li>
                 </ul>
-                <h4><span id="3.4.0">(3.4.0) Performance Requirements</span></h4>
+                <h4><span id="3.4.0">(3.4) Performance Requirements</span></h4>
                 <ul>
                     <li>Previously selected stocks reported in under one second.</li>
                     <li>Newly selected stocks assessed and reported within one minute.</li>
@@ -226,7 +226,7 @@
                     <li>Increases in user base and/or Watchlist size should not significantly interfere with performance.</li>
                     <li>Ensure the app is easy to maintain.</li>
                 </ul>
-                <h4><span id="3.5.0">(3.5.0) Software System Attributes</span></h4>
+                <h4><span id="3.5.0">(3.5) Software System Attributes</span></h4>
                 <div style="padding: 0px 10px;">
                     <h5><span id="3.5.1">(3.5.1) Security</span></h5>
                     <ul>
@@ -256,7 +256,7 @@
                         <li>Stockeye will be accessible and fully functional through popular web browsers such as Microsoft Edge, Google Chrome, and Mozilla Firefox at launch. As development progresses, StockEye will strive to support all existing browsers.</li>
                     </ul>
                 </div>
-                <h4><span id="3.6.0">(3.6.0) Actors and Use Cases</span></h4>
+                <h4><span id="3.6.0">(3.6) Actors and Use Cases</span></h4>
                 <p>The user interacting with StockEye through their web-browser is the sole actor; however, this actor can either be an unregistered or registered user. The following UML Use Case diagram illustrates how the user will interact with the use cases.</p>
                 <img src="\img\requirements\uml-user_case.png" alt="User Case" style="display: block; margin-left:auto;margin-right:auto; width: 500px;">            
                 <h5>Actors</h5>
@@ -359,7 +359,7 @@
                 </table>
             </div>
 
-        <h3><span id="Change-History">(4.0.0) Change History</span></h3>
+        <h3><span id="Change-History">(4) Change History</span></h3>
             <p>The SRS is a living document, changing as the project progresses. While Google Docs is used to track the editing history, the SRS includes references to major changes of the document within itself.</p>
             <table class="vertical-table" style="font-size:80%; margin-left:auto; margin-right:auto;">
                     <tr>

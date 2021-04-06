@@ -34,14 +34,14 @@
 
            <h3>Table of Contents</h3>
             <ul style="list-style-type:none; padding-left: 10px;">
-                <li><a href="#1.0.0">(1.0) Introduction</a></li>
+                <li><a href="#1.0.0">(1) Introduction</a></li>
                 <ul style="list-style-type:none;">
                     <li><a href="#1.1.0">(1.1) Purpose</a></li>
                     <li><a href="#1.2.0">(1.2) Scope</a></li>
                     <li><a href="#1.3.0">(1.3) Definitions</a></li>
                     <li><a href="#1.4.0">(1.4) References</a></li>
                 </ul>
-                <li><a href="#2.0.0">(2.0) Decomposition Description</a>
+                <li><a href="#2.0.0">(2) Decomposition Description</a>
                 <ul style="list-style-type:none;">
                     <li><a href="#2.1.0">(2.1) Software Architecture</a></li>
                     <ul style="list-style-type:none;">
@@ -50,7 +50,7 @@
                     </ul>
                     <li><a href="#2.2.0">(2.2) Concurrent Process Decomposition</a></li>
                 </ul>
-                <li><a href="#3.0.0">(3.0) Interface Description</a>
+                <li><a href="#3.0.0">(3) Interface Description</a>
                 <ul style="list-style-type:none;">
                     <li><a href="#3.1.0">(3.1) Module Interface</a></li>
                     <ul style="list-style-type:none;">
@@ -66,7 +66,7 @@
                         <li><a href="#3.1.10">(3.1.10) FilterStockView</a></li>
                     </ul>
                 </ul>
-                <li><a href="#4.0.0">(4.0) Detailed Design</a>
+                <li><a href="#4.0.0">(4) Detailed Design</a>
                 <ul style="list-style-type:none;">
                     <li><a href="#4.1.0">(4.1) Module Detailed Design</a></li>
                     <li><a href="#4.2.0">(4.2) Documentation</a></li>
@@ -75,18 +75,18 @@
                         <li><a href="#4.2.2">(4.2.2) Back End</a></li>
                     </ul>
                 </ul>  
-                <li><a href="#Change-History">(5.0) Change History</a></li>
+                <li><a href="#Change-History">(5) Change History</a></li>
             </ul>
 
-            <h3><span id="1.0.0">(1.0.0) Introduction</span></h3>
+            <h3><span id="1.0.0">(1) Introduction</span></h3>
             <p>This document is written following the guidelines of the IEEE Recommended Practice for Software Design Descriptions.</p>
             <p>The following provides an overview of the StockEye Design.</p>
             <div style="padding: 0px 10px;">
-                <h4><span id="1.1.0">(1.1.0) Purpose</span></h4>
+                <h4><span id="1.1.0">(1.1) Purpose</span></h4>
                 <p>This document provides an in-depth description of the overall architecture and system design of the StockEye web application. It outlines the modules, processes, and data dependencies, as well as their detailed design and decomposition.</p>
-                <h4><span id="1.2.0">(1.2.0) Scope</span></h4>
+                <h4><span id="1.2.0">(1.2) Scope</span></h4>
                 <p>The goal of this document is to aid developers in the design process and implementation of the StockEye project in order to ensure accuracy and consistency during the development of the StockEye web application.</p>
-                <h4><span id="1.3.0">(1.3.0) Definitions</span></h4>
+                <h4><span id="1.3.0">(1.3) Definitions</span></h4>
                 <table class="horizontal-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
                     <tr>
                         <th>Term</th>
@@ -117,7 +117,7 @@
                         <td>A visual element to display to the user; in this software it is normally in the form of a web page.</td>
                     </tr>
                 </table>
-                <h4><span id="1.4.0">(1.4.0) References</span></h4>
+                <h4><span id="1.4.0">(1.4) References</span></h4>
                 <p>A complete list of all documents and other sources of information referenced.</p>
                 <ul>
                     <li><a target="_blank" href="https://bohr.wlu.ca/cp317/notes/IEEE_830.pdf">IEEE Recommended Practice for Software Requirements Specifications (1998)</a></li>
@@ -127,7 +127,7 @@
                 </ul>
             </div>
             
-            <h3><span id="2.0.0">(2.0.0) Decomposition Description</span></h3>
+            <h3><span id="2.0.0">(2) Decomposition Description</span></h3>
             <p>This section describes the decomposition of the system in three different forms:</p>
             <ul>
                 <li>Cohesive modules are formed by grouping data and functions, which are then displayed in their corresponding class and package diagrams.</li>
@@ -135,7 +135,7 @@
                 <li>The storage format of persistent data is identified.</li>
             </ul>
             <div style="padding: 0px 10px;">
-                <h4><span id="2.1.0">(2.1.0) Software Architecture</span></h4>
+                <h4><span id="2.1.0">(2.1) Software Architecture</span></h4>
                 <div style="padding: 0px 10px;">
                     <h5><span id="2.1.1">(2.1.1) Package Diagram</span></h4>
                     <img src="\img\design\package_diagram.png" alt="package_diagram" style="display: block; margin-left:auto;margin-right:auto; width: 400px;">
@@ -246,7 +246,7 @@
                         </tr>
                     </table>
                 </div>
-                <h4><span id="2.2.0">(2.2.0) Concurrent Process Decomposition</span></h4>
+                <h4><span id="2.2.0">(2.2) Concurrent Process Decomposition</span></h4>
                 <div style="padding: 0px 10px;">
                     <h5>StreamListener</h5>
                     <p>Concurrent process to handle Status objects pushed through the Twitter Stream API. Forwards newly created Tweet objects to the Machine Learning Model for evaluation, ensuring up to date sentiment values within the database.</p>
@@ -282,10 +282,10 @@
                 </div>
             </div>
 
-            <h3><span id="3.0.0">(3.0.0) Interface Description</span></h3>
+            <h3><span id="3.0.0">(3) Interface Description</span></h3>
             <p>This section provides prototypes and details for the StockEye interface.</p>
             <div style="padding: 0px 10px;">
-                <h4><span id="3.1.0">(3.1.0) Module Interface</span></h4>
+                <h4><span id="3.1.0">(3.1) Module Interface</span></h4>
                 
                 <div style="padding: 0px 10px;">
                     <h5><span id="3.1.1">(3.1.1) HomeView</span></h5>
@@ -595,9 +595,9 @@
                 </div>
             </div>
             
-            <h3><span id="4.0.0">(4.0.0) Detailed Design</span></h3>
+            <h3><span id="4.0.0">(4) Detailed Design</span></h3>
             <div style="padding: 0px 10px;">
-                <h4><span id="4.1.0">(4.1.0) Module Detailed Design</span></h4>
+                <h4><span id="4.1.0">(4.1) Module Detailed Design</span></h4>
                 <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
                     <tr>
                         <th>Function</th>
@@ -648,7 +648,7 @@
                     </tr>                           
                 </table>
 
-                <h4><span id="4.2.0">(4.2.0) Documentation</span></h4>
+                <h4><span id="4.2.0">(4.2) Documentation</span></h4>
                 <div style="padding: 0px 10px;">
                     <h5><span id="4.2.1">(4.2.1) Front End</span></h5>
                     <p><b>Languages</b>: HTML, CSS, Javascript</p>
@@ -665,7 +665,7 @@
                 </div>
             </div>
 
-            <h3><span id="Change-History">(5.0.0) Change History</span></h3>
+            <h3><span id="Change-History">(5) Change History</span></h3>
             <p>The StockEye Design is a living document, changing as the project progresses. While Google Docs is used to track the editing history, the StockEye Design includes references to major changes of the document within itself.</p>
             <table class="vertical-table" style="font-size:80%; margin-left:auto; margin-right:auto;">
                     <tr>
