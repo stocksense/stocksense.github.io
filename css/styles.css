@@ -856,3 +856,28 @@ textarea {
 	color: #ff0000;
 	vertical-align: top;
 }
+
+.chatbox {
+	width: auto;
+	margin: 50px auto;
+	background: #00bfb6;
+	padding: 10px;
+	text-align: center;
+	font-weight: 900;
+	color: #fff;
+	font-family: arial;
+	position:relative;
+  }
+
+  .chatmsg:before {
+	content: "";
+	width: px;
+	height: 0px;
+	position: absolute;
+	border-left: 10px solid #00bfb6;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #00bfb6;
+	border-bottom: 10px solid transparent;
+	right: -20px;
+	top: px;
+  }
