@@ -36,14 +36,15 @@
             <ul style="list-style-type:none;  padding-left: 10px;">
                 <li><a href="#1.0">(1) Introduction</a></li>
                 <li><a href="#2.0">(2) Registration</a></li>
-                <li><a href="#3.0">(3) Trending</a></li>
-                <li><a href="#4.0">(4) Watchlists</a></li>
+                <li><a href="#3.0">(3) Log in</a></li>
+                <li><a href="#4.0">(4) Trending</a></li>
+                <li><a href="#5.0">(5) Watchlists</a></li>
                 <ul style="list-style-type:none;">
-                    <li><a href="#4.1">(4.1) Creating Watchlists</a></li>
-                    <li><a href="#4.2">(4.2) Managing Watchlists</a></li>
+                    <li><a href="#5.1">(5.1) Creating Watchlists</a></li>
+                    <li><a href="#5.2">(5.2) Managing Watchlists</a></li>
                 </ul>
-                <li><a href="#5.0">(5) Profile Settings</a></li>
-                <li><a href="#6.0">(6) Comptability</a></li>
+                <li><a href="#6.0">(6) Profile Settings</a></li>
+                <li><a href="#7.0">(7) Comptability</a></li>
             </ul>
 
             <h3><span id="1.0">(1) Introduction</span></h3>
@@ -61,7 +62,7 @@
             <div style="padding: 0px 10px;">
                 <p style="text-align: center;"><a href="\img\user_doc\register.png" class="Thumb"><img src="\img\user_doc\register.png" alt="" /></a></p>
                 <p>Registering an account provides the user access to the <i>Watchlist</i> feature.</p>
-                <p>In the Registration page, the user will be presented with the following fields:</p>
+                <p>In the Registration page, the user is presented with the following fields:</p>
                 <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
                     <tr>
                         <th>Field</th>
@@ -72,7 +73,7 @@
                         <td>
                             <ul style="list-style-type:'- '; padding-left: 5px;">
                                 <li>Desired account username.</li>
-                                <li>Can be used as an alternative to email address when logging-in.</li>
+                                <li>Used when logging-in.</li>
                                 <li>Username cannot already be existing.</li>
                             </ul>
                         </td>
@@ -103,7 +104,6 @@
                         <td>
                             <ul style="list-style-type:'- '; padding-left: 5px;">
                                 <li>Account email address.</li>
-                                <li>Can be used as an alternative to username when logging-in.</li>
                                 <li>Used for password recovery and watchlist notification purposes. (Currently not supported)</li>
                             </ul>
                         </td>
@@ -117,34 +117,66 @@
                     <li>Input Username has already been used by another registration.</li>
                 </ul>
             </div>
-            <h3><span id="3.0">(3) Trending</span></h3>
-            <p style="text-align: center;"><a href="\img\user_doc\trending.png" class="Thumb"><img src="\img\user_doc\trending.png" alt="" /></a></p>
+
+            <h3><span id="3.0">(3) Log in</span></h3>
             <div style="padding: 0px 10px;">
+                <p style="text-align: center;"><a href="\img\user_doc\log-in.png" class="Thumb"><img src="\img\user_doc\log-in.png" alt="" /></a></p>
+                <p>The <i>Log in</i> page is used to sign-in.</p>
+                <p>In the <i>Log in</i> page, the user is presented with the following fields:</p>
+                <table class="vertical-table" style="font-size:90%; margin-left:auto; margin-right:auto;">
+                    <tr>
+                        <th>Field</th>
+                        <th>Details</th>
+                    <tr>
+                    <tr>
+                        <td>Username</td>
+                        <td>
+                            <ul style="list-style-type:'- '; padding-left: 5px;">
+                                <li>Account username.</li>
+                                <li>Case-insensitive.</li>
+                            </ul>
+                        </td>
+                    <tr>
+                    <tr>
+                        <td>Password</td>
+                        <td>
+                            <ul style="list-style-type:'- '; padding-left: 5px;">
+                                <li>The account password.</li>
+                                <li>Case-sensitive.</li>
+                            </ul>
+                        </td>
+                    <tr>
+                </table>
+             </div>
+            <h3><span id="4.0">(4) Trending</span></h3>
+            <div style="padding: 0px 10px;">
+                <p style="text-align: center;"><a href="\img\user_doc\trending.png" class="Thumb"><img src="\img\user_doc\trending.png" alt="" /></a></p>
                 <p>The <i>Trending</i> page displays the most popular stocks based on Twitter sentiment. In other words, these are the stocks that are currently enjoying the most favourable reception from the Twitter community.</p>
             </div>
-            <h3><span id="4.0">(4) Watchlists</span></h3>
+
+            <h3><span id="5.0">(5) Watchlists</span></h3>
             <div style="padding: 0px 10px;">
                 <p style="text-align: center;"><a href="\img\user_doc\watchlists.png" class="Thumb"><img src="\img\user_doc\watchlists.png" alt="" /></a></p>
                 <p>This feature is only available after signing-in with an account.</p>
                 <div style="padding: 0px 10px;">
-                    <h4><span id="4.1">(4.1) Creating Watchlists</span></h4>
+                    <h4><span id="5.1">(5.1) Creating Watchlists</span></h4>
                     <p style="text-align: center;"><a href="\img\user_doc\create_watchlist.png" class="Thumb"><img src="\img\user_doc\create_watchlist.png" alt="" /></a></p>
                     <p>A watchlist can be created by selecting the <i>Create Watchlist</i> button. Here the watchlist can be named and then any number of the available stock tickers may be selected by holding the ‘Ctrl’ key and clicking. Then click on <i>Save Changes</i> and the desired watchlist will be displayed. When viewed, stocks in a watchlist will show the number of positive sentiments in a green circle, and the number of negative sentiments in a red circle.</p>
-                    <h4><span id="4.2">(4.2) Managing Watchlists</span></h4>
+                    <h4><span id="5.2">(5.2) Managing Watchlists</span></h4>
                     <p style="text-align: center;"><a href="\img\user_doc\manage_watchlists.png" class="Thumb"><img src="\img\user_doc\manage_watchlists.png" alt="" /></a></p>
                     <p>The user can make changes to their created watchlists by selecting the <i>Manage Watchlists</i> button. First, any created watchlist may be deleted by selecting its checkbox and then selecting the <i>Delete Selected Watchlists</i> button. New watchlists may also be created here by selecting the <i>Create Watchlist</i> button and following the above instructions.</p>
                     <p>Watchlists can be edited by clicking on the name of the desired Watchlist. By holding the ‘Ctrl’ key and clicking on desired stocks, the Watchlist will be updated to include these stocks instead of the original selections.</p>
                 </div>
-
             </div>
-            <h3><span id="5.0">(5) Profile Settings</span></h3>
-            <p style="text-align: center;"><a href="\img\user_doc\profile_settings.png" class="Thumb"><img src="\img\user_doc\profile_settings.png" alt="" /></a></p>
+
+            <h3><span id="6.0">(6) Profile Settings</span></h3>
             <div style="padding: 0px 10px;">
+                <p style="text-align: center;"><a href="\img\user_doc\profile_settings.png" class="Thumb"><img src="\img\user_doc\profile_settings.png" alt="" /></a></p>
                 <p>This page is only accessible after signing-in.</p>
                 <p>Perhaps a user's email address has changed, or they feel that their current password is no longer secure. No problem. StockEye makes it as simple as possible to make such crucial changes to their account through the <i>Profile Settings</i> page.</p>
                 <p>In the <i>Profile Setting</i> page the user is presented with a form with inputs for a new password and email address, which also displays email currently associated with their account. The user simply has to enter the desired details to be changed and click <i>Save Changes</i>. Yes, it's that simple! </p>
             </div>
-            <h3><span id="6.0">(6) Compatibility</span></h3>
+            <h3><span id="7.0">(7) Compatibility</span></h3>
             <div style="padding: 0px 10px;">
                 <p>Stockeye is compatible with Chrome, Firefox, Chrome for Android.</p>
             </div>
